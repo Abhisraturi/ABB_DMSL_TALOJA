@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alarms>
+    <multiLangs>
+        <langs defLangId="L1" curLangId="L1">
+            <lang name="Lang1" langCode="en-US" writingsystem="Any" defaultFont="Roboto" langId="L1" removable="false" keypads=";;"/>
+        </langs>
+        <MLTexts>
+            <MLText id="0" L1="Not Triggered"/>
+            <MLText id="1" L1="Disabled"/>
+            <MLText id="2" L1="Triggered"/>
+            <MLText id="3" L1="Triggered Not Acked"/>
+            <MLText id="4" L1="Not Triggered Acked"/>
+            <MLText id="5" L1="Not Triggered Not Acked"/>
+            <MLText id="6" L1="Triggered Acked"/>
+        </MLTexts>
+    </multiLangs>
+    <defaultColors notTriggeredTxtColor="#000000" notTriggeredBgColor="#ffffff" disabledTxtColor="#000000" disabledBgColor="#ffffff" triggeredTxtColor="#000000" triggeredBgColor="#ffffff" triggeredNotAckedTxtColor="#000000" triggeredNotAckedBgColor="#ffffff" notTriggeredAckedTxtColor="#000000" notTriggeredAckedBgColor="#ffffff" notTriggeredNotAckedTxtColor="#000000" notTriggeredNotAckedBgColor="#ffffff" triggeredAckedTxtColor="#000000" triggeredAckedBgColor="#ffffff" ackTxtColor="#ff0000" ackBgColor="#ffff00"/>
+    <stateMLDesc NotTriggered="[0@Alarm]Not Triggered" Disabled="[1@Alarm]Disabled" Triggered="[2@Alarm]Triggered" TriggeredNotAcked="[3@Alarm]Triggered Not Acked" NotTriggeredAcked="[4@Alarm]Not Triggered Acked" NotTriggeredNotAcked="[5@Alarm]Not Triggered Not Acked" TriggeredAcked="[6@Alarm]Triggered Acked"/>
+</alarms>

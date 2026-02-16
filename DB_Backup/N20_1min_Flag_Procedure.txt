@@ -1,0 +1,55 @@
+CREATE PROCEDURE [dbo].[GetN2O_Compare_Minute_Fast]
+    @StartDate DATETIME = NULL,
+    @EndDate DATETIME = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+    -- SSRS Fix: Convert to DATETIME before subtracting second
+    IF @EndDate IS NOT NULL 
+        SET @EndDate = DATEADD(SECOND, -1, CAST(DATEADD(DAY, 1, CAST(@EndDate AS DATE)) AS DATETIME));
+
+    -- CTE for Table Set 1
+    WITH Raw_T1 AS (
+        SELECT v.[DATE], v.[VAL_1], v.[Flow], v.[IsCalibration], v.[Level_Mode], v.[Substitution_Status], v.[Plant_Status], v.[Analyzer_Mode], v.[Purge_Status],
+            (SELECT TOP 1 c.[STATUS] FROM [DATA].[dbo].[CAL] c WHERE c.[DATE] <= v.[DATE] AND c.[NAME] LIKE '%N2O%' ORDER BY c.[DATE] DESC) AS LastCalStatus
+        FROM [DATA].[dbo].[Value] v
+        WHERE (@StartDate IS NULL OR v.[DATE] >= @StartDate) AND (@EndDate IS NULL OR v.[DATE] <= @EndDate)
+    ),
+    T1 AS (
+        SELECT DATEADD(MINUTE, DATEDIFF(MINUTE, 0, [DATE]), 0) AS [JoinTime], AVG([VAL_1]) AS [Value], AVG([Flow]) AS [Flow],
+            TRIM(
+                MAX(CASE WHEN Plant_Status IS NOT NULL AND Plant_Status <> 'RUNNING' THEN '*' ELSE '' END) +
+                MAX(CASE WHEN (Substitution_Status = 'SUBSTITUTED' OR Plant_Status <> 'RUNNING') THEN 'S' ELSE '' END) +
+                MAX(CASE WHEN (IsCalibration = 1 OR Level_Mode LIKE '%CHECK%') THEN 'C' ELSE '' END) +
+                MAX(CASE WHEN (IsCalibration = 1 OR Level_Mode LIKE '%CHECK%') AND LastCalStatus = 'OUT OF CONTROL' THEN 'T' ELSE '' END) +
+                MAX(CASE WHEN Analyzer_Mode = 'ANALYZER OFFLINE' THEN 'F' ELSE '' END) +
+                MAX(CASE WHEN (Purge_Status IS NOT NULL AND Purge_Status NOT IN ('OFF', '0')) THEN 'P' ELSE '' END) +
+                MAX(CASE WHEN Analyzer_Mode LIKE '%MAINTENANCE%' THEN 'M' ELSE '' END)
+            ) AS [Flag]
+        FROM Raw_T1 GROUP BY DATEADD(MINUTE, DATEDIFF(MINUTE, 0, [DATE]), 0)
+    ),
+    -- CTE for Table Set 2
+    Raw_T2 AS (
+        SELECT v1.[DATE], v1.[VAL_1], v1.[Flow], v1.[IsCalibration], v1.[Level_Mode], v1.[Substitution_Status], v1.[Plant_Status], v1.[Analyzer_Mode], v1.[Purge_Status],
+            (SELECT TOP 1 c1.[STATUS] FROM [DATA].[dbo].[Cal_1] c1 WHERE c1.[DATE] <= v1.[DATE] AND c1.[NAME] LIKE '%N2O%' ORDER BY c1.[DATE] DESC) AS LastCalStatus
+        FROM [DATA].[dbo].[Value_1] v1
+        WHERE (@StartDate IS NULL OR v1.[DATE] >= @StartDate) AND (@EndDate IS NULL OR v1.[DATE] <= @EndDate)
+    ),
+    T2 AS (
+        SELECT DATEADD(MINUTE, DATEDIFF(MINUTE, 0, [DATE]), 0) AS [JoinTime], AVG([VAL_1]) AS [Value], AVG([Flow]) AS [Flow],
+            TRIM(
+                MAX(CASE WHEN Plant_Status IS NOT NULL AND Plant_Status <> 'RUNNING' THEN '*' ELSE '' END) +
+                MAX(CASE WHEN (Substitution_Status = 'SUBSTITUTED' OR Plant_Status <> 'RUNNING') THEN 'S' ELSE '' END) +
+                MAX(CASE WHEN (IsCalibration = 1 OR Level_Mode LIKE '%CHECK%') THEN 'C' ELSE '' END) +
+                MAX(CASE WHEN (IsCalibration = 1 OR Level_Mode LIKE '%CHECK%') AND LastCalStatus = 'OUT OF CONTROL' THEN 'T' ELSE '' END) +
+                MAX(CASE WHEN Analyzer_Mode = 'ANALYZER OFFLINE' THEN 'F' ELSE '' END) +
+                MAX(CASE WHEN (Purge_Status IS NOT NULL AND Purge_Status NOT IN ('OFF', '0')) THEN 'P' ELSE '' END) +
+                MAX(CASE WHEN Analyzer_Mode LIKE '%MAINTENANCE%' THEN 'M' ELSE '' END)
+            ) AS [Flag]
+        FROM Raw_T2 GROUP BY DATEADD(MINUTE, DATEDIFF(MINUTE, 0, [DATE]), 0)
+    )
+    SELECT COALESCE(T1.JoinTime, T2.JoinTime) AS [Date], ISNULL(T1.Value, 0) AS [Val_Table1], ISNULL(T1.Flag, '') AS [Flag_Table1], ISNULL(T2.Value, 0) AS [Val_Table2], ISNULL(T2.Flag, '') AS [Flag_Table2], ISNULL(T1.Flow, ISNULL(T2.Flow, 0)) AS [Flow]
+    FROM T1 FULL OUTER JOIN T2 ON T1.JoinTime = T2.JoinTime
+    ORDER BY [Date] ASC OPTION (RECOMPILE);
+END
+GO

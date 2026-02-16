@@ -1,0 +1,51 @@
+<reports>
+ <report_print_default type="None" timeSpec="local" name="" useDefault="0">
+  <port>File</port>
+  <printer>PDF</printer>
+  <unit>1</unit>
+  <isCustom>false</isCustom>
+  <networkPrinter></networkPrinter>
+  <paper>A4</paper>
+  <paperW>8268</paperW>
+  <paperH>11693</paperH>
+  <colorMode>3 Color CMY</colorMode>
+  <isPortrait>1</isPortrait>
+  <marginTop>400</marginTop>
+  <marginLeft>300</marginLeft>
+  <marginBottom>0</marginBottom>
+  <marginRight>0</marginRight>
+ </report_print_default>
+ <report_txt_default type="Alarm" timeSpec="local" name="txt-default" useDefault="0">
+  <port>USB</port>
+  <printer>Generic Printer</printer>
+  <roll-paper-chars>80</roll-paper-chars>
+  <alarms/>
+ </report_txt_default>
+ <report type="Graphics" timeSpec="local" name="TrendTable1" useDefault="1">
+  <graphics>
+   <graphic>
+    <page-hash>graphic report 1_a27b1a</page-hash>
+    <page-number>0</page-number>
+   </graphic>
+  </graphics>
+ </report>
+ <report type="Graphics" timeSpec="local" name="TrendTable2" useDefault="1">
+  <graphics>
+   <graphic>
+    <page-hash>trendtable2_b81554</page-hash>
+    <page-number>0</page-number>
+   </graphic>
+  </graphics>
+ </report>
+ <report type="Graphics" timeSpec="local" name="Graphic Report 3" useDefault="1">
+  <graphics>
+   <graphic>
+    <page-hash>graphic report 3_b9aed3</page-hash>
+    <page-number>0</page-number>
+   </graphic>
+  </graphics>
+ </report>
+ <report type="Alarm" name="Text Report 4" alActive="1" useDefault="1">
+  <alarms/>
+ </report>
+</reports>

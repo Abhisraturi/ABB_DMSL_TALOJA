@@ -1,0 +1,5 @@
+<FastBootConfig>
+ <fastboot>0</fastboot>
+ <fastbootMode>0</fastbootMode>
+ <storageInitDelay>60</storageInitDelay>
+</FastBootConfig>

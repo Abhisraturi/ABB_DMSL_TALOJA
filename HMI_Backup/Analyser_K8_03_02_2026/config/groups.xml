@@ -1,0 +1,98 @@
+<groups>
+ <group Type="Auto">
+  <name>AddUser@$GroupSubscrWgt@$0</name>
+  <active>false</active>
+  <tag>Force Logoff Time</tag>
+ </group>
+ <group Type="Auto">
+  <name>Calendar@$GroupSubscrWgt@$0</name>
+  <active>false</active>
+  <tag>System Time</tag>
+ </group>
+ <group Type="Auto">
+  <name>Dialog1@$GroupSubscrWgt@$0</name>
+  <active>false</active>
+  <tag>End_Time</tag>
+  <tag>Strat_Time</tag>
+  <tag>System Time</tag>
+ </group>
+ <group Type="Auto">
+  <name>Dialog2@$GroupSubscrWgt@$0</name>
+  <active>false</active>
+  <tag>End_Time</tag>
+  <tag>Strat_Time</tag>
+  <tag>System Time</tag>
+ </group>
+ <group Type="Auto">
+  <name>MAIN MENU@$GroupSubscrWgt@$0</name>
+  <active>false</active>
+  <tag>A1_N2O</tag>
+  <tag>A1_NO</tag>
+  <tag>A1_O2</tag>
+  <tag>A2_N2O</tag>
+  <tag>A2_NO</tag>
+  <tag>Maintaince_1</tag>
+  <tag>Maintaince_2</tag>
+  <tag>START_AUTO_CAL_A-1</tag>
+  <tag>START_AUTO_CAL_A-2</tag>
+  <tag>flow</tag>
+ </group>
+ <group Type="Auto">
+  <name>VALIDATION@$GroupSubscrWgt@$0</name>
+  <active>false</active>
+  <tag>Application/Global_Variables/CAL_FLAG</tag>
+  <tag>Application/Global_Variables/CAL_MODE_BIT</tag>
+  <tag>Application/Global_Variables/DIS_MP01</tag>
+  <tag>Application/Global_Variables/N2O_MID_CAL_ON</tag>
+  <tag>Application/Global_Variables/N2O_SPAN_CAL_ON</tag>
+  <tag>Application/Global_Variables/PRB1_MEAS</tag>
+  <tag>Application/Global_Variables/PRB1_MEAS_BIT</tag>
+  <tag>Application/Global_Variables/PRB1_MEAS_BIT1</tag>
+  <tag>Application/Global_Variables/SPAN_HIGH_VAL_SELE</tag>
+  <tag>Application/Global_Variables/SPAN_MID_VAL_SELE</tag>
+  <tag>Application/Global_Variables/VALIDATION_BIT</tag>
+  <tag>Application/Global_Variables/VALIDATION_FLAG</tag>
+  <tag>Application/Global_Variables/VALIDATION_N2OMID_HMI</tag>
+  <tag>Application/Global_Variables/VALIDATION_N2OMID_HMIA</tag>
+  <tag>Application/Global_Variables/VALIDATION_N2O_HMI</tag>
+  <tag>Application/Global_Variables/VALIDATION_N2O_HMIA</tag>
+  <tag>Application/Global_Variables/ZERO_CAL_HMI</tag>
+  <tag>Application/Global_Variables/ZERO_CAL_HMIA</tag>
+  <tag>Application/Global_Variables/ZERO_CAL_ON</tag>
+  <tag>Application/Global_Variables/ZERO_VAL_SELE</tag>
+ </group>
+ <group Type="Auto">
+  <name>VALUES@$GroupSubscrWgt@$0</name>
+  <active>false</active>
+  <tag>A2_N2O</tag>
+  <tag>EXPECTED N0 VALUE_A-2</tag>
+  <tag>EXPECTED NO VALUE_A-1</tag>
+  <tag>EXPECTED O2 VALUE-A-1</tag>
+  <tag>EXPECTED_N20_VALUE_A-1</tag>
+  <tag>EXPECTED_N20_VALUE_A-2</tag>
+  <tag>N20_MAX_VALUE_A-1</tag>
+  <tag>N20_MAX_VALUE_A-2</tag>
+  <tag>N20_MIN_VALUE_A-2</tag>
+  <tag>N2O_MID_SPAN_VALUE_A-1</tag>
+  <tag>N2O_MID_SPAN_VALUE_A-2</tag>
+  <tag>N2O_MIN_VALUE_A-1</tag>
+  <tag>NO_MAX_VALUE_A-1</tag>
+  <tag>NO_MAX_VALUE_A-2</tag>
+  <tag>NO_MIN_VALUE_A-1</tag>
+  <tag>NO_MIN_VALUE_A-2</tag>
+  <tag>O2_MAX_VALUE_A-1</tag>
+  <tag>O2_MIN_VALUE_A-1</tag>
+ </group>
+ <group Type="Auto">
+  <name>graphic report 1_a27b1a@$GroupSubscrWgt@$0</name>
+  <active>false</active>
+  <tag>End_Time</tag>
+  <tag>Strat_Time</tag>
+ </group>
+ <group Type="Auto">
+  <name>trendtable2_b81554@$GroupSubscrWgt@$0</name>
+  <active>false</active>
+  <tag>End_Time</tag>
+  <tag>Strat_Time</tag>
+ </group>
+</groups>

@@ -1,0 +1,24 @@
+<policies>
+ <policy>
+  <name>OnChange</name>
+  <triggers>
+   <trigger>
+    <type>onchange</type>
+    <minIntervalMs>1000</minIntervalMs>
+    <deadband>0</deadband>
+    <isPercent>0</isPercent>
+   </trigger>
+  </triggers>
+  <conditions/>
+ </policy>
+ <policy>
+  <name>OnTimer</name>
+  <triggers>
+   <trigger>
+    <type>timer</type>
+    <intervalMs>1000</intervalMs>
+   </trigger>
+  </triggers>
+  <conditions/>
+ </policy>
+</policies>

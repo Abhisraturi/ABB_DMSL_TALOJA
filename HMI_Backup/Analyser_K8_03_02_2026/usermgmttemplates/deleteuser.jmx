@@ -1,0 +1,123 @@
+<wgtPage projectType="HMI Project" rev="1">
+ <object class="PageWgt" staticFile="opt/deleteuser.png" downloadPrepDone="false" staticOptEnable="false" id="DeleteUser" dataWndSize="0,70" pageName="DeleteUser" pageSize="480,480" usedFonts="Roboto,Roboto Medium">
+  <wgtStyle x="0" y="0" fitToSize="1" ver="0499004264" width="480" height="480" v="04.99.00.4264"/>
+  <object class="PageMLTextMgrWgt" mlFileName="" id="_PageMLTextMgrWgt" mgrType="Page">
+   <wgtStyle x="0" y="0" width="0" height="0"/>
+   <langs defLangId="L1" curLangId="L1">
+    <lang langId="L1" name="Lang1" removable="false" writingsystem="Any" keypads=";;" langCode="en-US" defaultFont="Roboto"/>
+   </langs>
+   <MLTexts>
+    <MLText id="30" L1=""/>
+    <MLText id="2" L1="Error : Connection lost with the Runtime. Please verify the Runtime status"/>
+    <MLText id="3" L1="Error : The username or password you entered is incorrect"/>
+    <MLText id="4" L1="Error : The password entered is incorrect"/>
+    <MLText id="5" L1="Error : Action cannot be executed"/>
+    <MLText id="6" L1="Error : Passwords do not match"/>
+    <MLText id="7" L1="Error: Password length too short"/>
+    <MLText id="8" L1="Error: Password must contain numbers"/>
+    <MLText id="9" L1="Error: Password must contain special characters"/>
+    <MLText id="10" L1="Error: Password must be different than previous passwords"/>
+    <MLText id="11" L1="Error : User already exist"/>
+    <MLText id="12" L1="Error:Password cannot be empty"/>
+    <MLText id="13" L1="Error: Your password has expired"/>
+    <MLText id="14" L1="Warning: Your password will expire soon"/>
+    <MLText id="15" L1="Error : You are not authorized. Please contact administrator"/>
+    <MLText id="37" L1="DELETE"/>
+   </MLTexts>
+  </object>
+  <object class="ImageWgt" id="image2">
+   <wgtStyle imagePath="images/bgDeleteUser.svg" x="0" y="0" cx="246.57" cy="232.32" width="480" height="480"/>
+  </object>
+  <object class="LabelWgt" id="Usernamelbl">
+   <wgtStyle font-family="Roboto" x="27" vert-align="top" y="165" wrap-type="wordWrap" font-size="12" min-font-size="8" keypad-type="None" cx="34" cy="9" max-font-size="64" width="80" height="19" text="User name:" font-color="rgb(76,76,77)"/>
+  </object>
+  <object class="LabelWgt" id="Grouplbl">
+   <wgtStyle font-family="Roboto" x="59" vert-align="top" y="216" wrap-type="wordWrap" font-size="12" min-font-size="8" keypad-type="None" cx="25" cy="10" max-font-size="64" width="48" height="19" text="Group:" font-color="rgb(76,76,77)"/>
+  </object>
+  <object class="MsgTextWgt" id="error_msg">
+   <wgtStyle min="0" font-size="12" wrapping="true" cx="201.54" cy="36" x="46" marker="true" y="342" font-sizepx="16" height="76" font-color="rgb(255,0,0)" mtx="1,0,0,0,1,0,0,0,1" min-font-size="8" width="410" max="3" continous="false" vert-align="top" wrap-type="wordWrap" viewindex="false" font-family="Roboto" text="" value="0" keypad-type="None" max-font-size="64">
+    <msgtxt>
+     <msg index="0"/>
+     <msg index="1"/>
+     <msg index="2"/>
+     <msg index="3"/>
+     <msg index="4"/>
+     <msg index="5"/>
+     <msg index="6"/>
+     <msg index="7"/>
+     <msg index="8"/>
+     <msg index="9"/>
+     <msg index="10"/>
+     <msg index="11"/>
+     <msg index="12"/>
+     <msg index="13"/>
+     <msg index="14"/>
+    </msgtxt>
+   </wgtStyle>
+   <links>
+    <lang class="MLMsgLink:messages:">
+     <MLFontFamily L1="Roboto"/>
+     <textid idx="0" val="30"/>
+     <textid idx="1" val="15"/>
+     <textid idx="2" val="2"/>
+     <textid idx="3" val="3"/>
+     <textid idx="4" val="4"/>
+     <textid idx="5" val="5"/>
+     <textid idx="6" val="6"/>
+     <textid idx="7" val="7"/>
+     <textid idx="8" val="8"/>
+     <textid idx="9" val="9"/>
+     <textid idx="10" val="10"/>
+     <textid idx="11" val="11"/>
+     <textid idx="12" val="12"/>
+     <textid idx="13" val="13"/>
+     <textid idx="14" val="14"/>
+    </lang>
+   </links>
+  </object>
+  <object class="ComboBoxWgt" id="users_cmb">
+   <wgtStyle font-size="12" type="1" list="" cx="168.96" dropdownBorderColor="rgb(200,200,200)" cy="14.57" x="115" y="159" imageList="" dropdownButtonWidth="30" dropdownButtonImageWidth="10" listData="" dropdownButtonBgColor="rgb(237,237,237)" font-sizepx="16" height="30" dropdownFontColor="rgb(76,76,77)" font-color="rgb(76,76,77)" min-font-size="8" width="340" continous="true" vert-align="top" wrap-type="wordWrap" dropdownButtonImageHeight="10" forcePaint="8" font-family="Roboto" text="" keypad-type="None" index="0" bgColor="rgb(237,237,237)" dropdownSelFontColor="rgb(255,255,255)" max-font-size="64" borderColor="rgb(237,237,237)" dropdownSelBgColor="rgb(0,176,199)"/>
+   <dataLinks>
+    <dataLink sourceType="Data" tag="editUserList" dataSource="_UserMgr" widgetType="Project" readWrite="R" attribute="list"/>
+    <dataLink sourceType="Data" tag="editCurUser" dataSource="_UserMgr" widgetType="Project" readWrite="R/W" attribute="index"/>
+   </dataLinks>
+  </object>
+  <object class="ComboBoxWgt" id="group_cmb">
+   <wgtStyle font-size="12" type="1" list="" cx="168.96" dropdownBorderColor="rgb(200,200,200)" cy="14.57" x="115" y="213" imageList="" dropdownButtonWidth="30" dropdownButtonImageWidth="10" listData="" dropdownButtonBgColor="rgb(237,237,237)" font-sizepx="16" height="30" dropdownFontColor="rgb(76,76,77)" font-color="rgb(76,76,77)" min-font-size="8" width="340" continous="true" vert-align="top" wrap-type="wordWrap" dropdownButtonImageHeight="10" forcePaint="8" font-family="Roboto" text="" keypad-type="None" index="0" bgColor="rgb(237,237,237)" dropdownSelFontColor="rgb(255,255,255)" max-font-size="64" borderColor="rgb(237,237,237)" dropdownSelBgColor="rgb(0,176,199)"/>
+   <dataLinks>
+    <dataLink sourceType="Data" tag="groupNameList" dataSource="_UserGroupMgr" widgetType="Project" readWrite="R" attribute="list"/>
+    <dataLink sourceType="Data" tag="editUserGroup" dataSource="_UserMgr" widgetType="Project" readWrite="R/W" attribute="index"/>
+   </dataLinks>
+  </object>
+  <object class="GroupWgt" customType="ButtonsWithLabel" id="Cancelbtn">
+   <wgtStyle x="233" y="428" cx="51" cy="18" width="102" height="36"/>
+   <object class="ButtonWgt" id="Cancelbtn.btn" hmiStyle="hmi-name:smooth; hmi-shape:rect; hmi-type:btn; type:btn">
+    <wgtStyle type="momentary" releasePath="images\btn_rect_grayup.svg" x="0" form="standard" pushColor="rgb(128,128,0)" needlePath="images\Btn_rect_Dwn.svg" y="0" bdrSize="0.17,0.17,0.15,0.16" cx="51" cy="18" value="0" style="0" width="102" height="36" fill="rgb(237,237,237)" downFillColor="rgb(0,176,199)" bdrImageSize="54.00,44.00"/>
+    <links>
+     <action class="LastVisitedPageAction" actionID="0" event="onMouseUp" actionWgt="_PageMgr" attribute="onMouseRelease"/>
+    </links>
+   </object>
+   <object class="LabelWgt" id="Cancelbtn.lbl" hmiStyle="hmi-type:wgtlabel">
+    <wgtStyle font-size="10" wrapping="true" cx="45.33" cy="16.37" x="3.78" y="0.82" font-sizepx="13" height="33.55" font-color="rgb(76,76,77)" min-font-size="8" width="90.67" alignment="center" vert-align="middle" wrap-type="wordWrap" forcePaint="1" font-family="Roboto Medium" text="CANCEL" keypad-type="None" max-font-size="64"/>
+   </object>
+  </object>
+  <object class="GroupWgt" customType="ButtonsWithLabel" id="Delbtn">
+   <wgtStyle x="343" y="428" cx="61" cy="18" width="122" height="36"/>
+   <object class="ButtonWgt" id="Delbtn.btn" hmiStyle="hmi-name:smooth; hmi-shape:rect; hmi-type:btn; type:btn">
+    <wgtStyle type="momentary" releasePath="images\Btn_rect_blueUp.svg" x="0" form="standard" pushColor="rgb(128,128,0)" needlePath="images\Btn_rect_Dwn.svg" y="0" bdrSize="0.17,0.17,0.15,0.16" cx="61" cy="18" value="0" style="0" width="122" height="36" fill="rgb(237,237,237)" downFillColor="rgb(0,176,199)" bdrImageSize="54.00,44.00"/>
+    <links>
+     <action class="ApplyEditAction" actionID="0" applyType="2" event="onMouseUp" actionWgt="_UserMgr" attribute="onMouseRelease"/>
+     <action class="LastVisitedPageAction" actionID="1" event="onMouseUp" actionWgt="_PageMgr" attribute="onMouseRelease"/>
+    </links>
+   </object>
+   <object class="LabelWgt" id="Delbtn.lbl" hmiStyle="hmi-type:wgtlabel">
+    <wgtStyle font-size="10" wrapping="true" cx="54.22" cy="16.37" x="4.52" y="0.83" font-sizepx="13" height="33.54" font-color="rgb(76,76,77)" min-font-size="8" width="108.45" alignment="center" vert-align="middle" wrap-type="wordWrap" forcePaint="1" font-family="Roboto Medium" keypad-type="None" max-font-size="64"/>
+    <links>
+     <lang class="MLTextLink" textid="37">
+      <MLFontFamily L1="Roboto Medium"/>
+     </lang>
+    </links>
+   </object>
+  </object>
+ </object>
+</wgtPage>

@@ -1,0 +1,113 @@
+<protocols>
+ <protocol>
+  <id>prot1</id>
+  <name>CDS3</name>
+  <file>CDS3</file>
+  <configuration>CfgVer=1 prot=TCP ipAddress=192.168.0.10 timeout=1000. maxVarList=255. model=default </configuration>
+  <autoImport></autoImport>
+  <enableOptimization>true</enableOptimization>
+  <enableDatagram>true</enableDatagram>
+  <offline_ort>30000</offline_ort>
+  <offline_opt>true</offline_opt>
+  <offline_rpt>3</offline_rpt>
+  <dictionaryname autoSync="false">[CODESYS V3 ETH prot1] PLC_PCO.PM5032_R_ETH.Application</dictionaryname>
+  <enableSimProtocol>true</enableSimProtocol>
+  <simFlags>0</simFlags>
+  <displayName>CODESYS V3 ETH</displayName>
+  <clientSide>false</clientSide>
+  <remoteOnly>false</remoteOnly>
+ </protocol>
+ <protocol>
+  <id>prot2</id>
+  <name>MODT</name>
+  <file>MODT</file>
+  <configuration>CfgVer=1 port=502 UDP=false ENCAP=false timeout=2000. busyTimeout=0. busyRetry=20. modbusUnitID=-1 maxOptLen=250 maxBitOptLen=2000 presetFunction=16 forceFunction=15 model=1 Node1::ipAddress=192.168.0.4 Node1::modbusUnitID=1 Node1::maxOptLen=20 Node1::maxBitOptLen=200 Node2::ipAddress=192.168.0.5 Node2::modbusUnitID=1 Node2::maxOptLen=20 Node2::maxBitOptLen=200 </configuration>
+  <autoImport>Node1::0 Node2::0 </autoImport>
+  <enableOptimization>true</enableOptimization>
+  <enableDatagram>false</enableDatagram>
+  <offline_ort>30000</offline_ort>
+  <offline_opt>true</offline_opt>
+  <offline_rpt>3</offline_rpt>
+  <dictionaries>
+   <dictionaryname nodeId="Node1" dictionaryFilterNode="false" autoSync="false"></dictionaryname>
+   <dictionaryname nodeId="Node2" dictionaryFilterNode="false" autoSync="false"></dictionaryname>
+  </dictionaries>
+  <enableSimProtocol>true</enableSimProtocol>
+  <simFlags>0</simFlags>
+  <displayName>Modbus TCP</displayName>
+  <clientSide>false</clientSide>
+  <remoteOnly>false</remoteOnly>
+ </protocol>
+ <protocol>
+  <id>prot3</id>
+  <name>SVRB</name>
+  <file></file>
+  <configuration>CfgVer=1 model=RETENTIVE_MEM </configuration>
+  <autoImport></autoImport>
+  <enableOptimization>true</enableOptimization>
+  <enableDatagram>false</enableDatagram>
+  <offline_ort>30000</offline_ort>
+  <offline_opt>false</offline_opt>
+  <offline_rpt>3</offline_rpt>
+  <dictionaryname autoSync="false"></dictionaryname>
+  <enableSimProtocol>true</enableSimProtocol>
+  <simFlags>0</simFlags>
+  <displayName>System Variables</displayName>
+  <clientSide>false</clientSide>
+  <remoteOnly>false</remoteOnly>
+ </protocol>
+ <protocol>
+  <id>prot4</id>
+  <name>MODT</name>
+  <file>MODT</file>
+  <configuration>CfgVer=1 ipAddress=127.0.0.1 port=502 UDP=false ENCAP=false timeout=2000. busyTimeout=0. busyRetry=20. modbusUnitID=1 maxOptLen=250 maxBitOptLen=2000 presetFunction=16 forceFunction=15 model=1 </configuration>
+  <autoImport></autoImport>
+  <enableOptimization>true</enableOptimization>
+  <enableDatagram>false</enableDatagram>
+  <offline_ort>30000</offline_ort>
+  <offline_opt>true</offline_opt>
+  <offline_rpt>3</offline_rpt>
+  <dictionaryname autoSync="false"></dictionaryname>
+  <enableSimProtocol>true</enableSimProtocol>
+  <simFlags>0</simFlags>
+  <displayName>Modbus TCP</displayName>
+  <clientSide>false</clientSide>
+  <remoteOnly>false</remoteOnly>
+ </protocol>
+ <protocol>
+  <id>prot5</id>
+  <name>CDS3</name>
+  <file>CDS3</file>
+  <configuration>CfgVer=1 prot=TCP ipAddress=192.168.0.11 timeout=1000. maxVarList=255. model=default </configuration>
+  <autoImport></autoImport>
+  <enableOptimization>true</enableOptimization>
+  <enableDatagram>true</enableDatagram>
+  <offline_ort>30000</offline_ort>
+  <offline_opt>true</offline_opt>
+  <offline_rpt>3</offline_rpt>
+  <dictionaryname autoSync="false">[CODESYS V3 ETH prot5] MAHADAN AGRITECH SINGEL PROBE.PM5032_R_ETH.Application</dictionaryname>
+  <enableSimProtocol>true</enableSimProtocol>
+  <simFlags>0</simFlags>
+  <displayName>CODESYS V3 ETH</displayName>
+  <clientSide>false</clientSide>
+  <remoteOnly>false</remoteOnly>
+ </protocol>
+ <protocol>
+  <id>prot6</id>
+  <name>MODT</name>
+  <file>MODT</file>
+  <configuration>CfgVer=1 prefix=Flow_Meter ipAddress=192.168.0.14 port=502 UDP=false ENCAP=false timeout=2000. busyTimeout=0. busyRetry=20. modbusUnitID=1 maxOptLen=250 maxBitOptLen=2000 presetFunction=16 forceFunction=15 model=1 </configuration>
+  <autoImport></autoImport>
+  <enableOptimization>true</enableOptimization>
+  <enableDatagram>false</enableDatagram>
+  <offline_ort>30000</offline_ort>
+  <offline_opt>true</offline_opt>
+  <offline_rpt>3</offline_rpt>
+  <dictionaryname autoSync="false"></dictionaryname>
+  <enableSimProtocol>true</enableSimProtocol>
+  <simFlags>0</simFlags>
+  <displayName>Modbus TCP</displayName>
+  <clientSide>false</clientSide>
+  <remoteOnly>false</remoteOnly>
+ </protocol>
+</protocols>

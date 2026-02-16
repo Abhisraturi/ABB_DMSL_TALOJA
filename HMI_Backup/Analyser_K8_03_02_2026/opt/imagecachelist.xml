@@ -1,0 +1,29 @@
+<files>
+ <file isSvgFile="true" prePath="keypads" imgSize="49,49" numSizes="12" file="images/btnkey_rect_graydwn.svg" numUses="58" stroke="none" fill="rgb(230,230,230)"/>
+ <file isSvgFile="true" prePath="keypads" imgSize="49,49" numSizes="12" file="images/btnkey_rect_grayup.svg" numUses="58" stroke="none" fill="rgb(230,230,230)"/>
+ <file isSvgFile="true" prePath="keypads" imgSize="49,49" numSizes="22" file="images/btnkey_rect_graydwn.svg" numUses="24" stroke="none" fill="rgb(200,200,200)"/>
+ <file isSvgFile="true" prePath="keypads" imgSize="49,49" numSizes="22" file="images/btnkey_rect_grayup.svg" numUses="24" stroke="none" fill="rgb(200,200,200)"/>
+ <file isSvgFile="true" imgSize="594,101" numSizes="24" file="images/btn_rect_dwn.svg" numUses="24" stroke="none" fill="rgb(0,70,136)"/>
+ <file isSvgFile="true" imgSize="594,101" numSizes="24" file="images/btn_rect_blueup.svg" numUses="24" stroke="none" fill="rgb(0,70,136)"/>
+ <file isSvgFile="true" imgSize="249,101" numSizes="7" file="images/btn_rectround_dwn.svg" numUses="7" stroke="none" fill="rgb(0,70,136)"/>
+ <file isSvgFile="true" imgSize="249,101" numSizes="7" file="images/btn_rectround_blueup.svg" numUses="7" stroke="none" fill="rgb(0,70,136)"/>
+ <file isSvgFile="true" imgSize="163,45" numSizes="1" file="images/win-like-press.svg" numUses="4" stroke="none" fill="none"/>
+ <file isSvgFile="true" imgSize="163,45" numSizes="1" file="images/win-like.svg" numUses="4" stroke="none" fill="none"/>
+ <file isSvgFile="true" prePath="keypads" imgSize="72,33" numSizes="3" file="images/btn_rect_dwn.svg" numUses="4" stroke="none" fill="rgb(0,76,136)"/>
+ <file isSvgFile="true" prePath="keypads" imgSize="72,33" numSizes="3" file="images/btn_rect_blueup.svg" numUses="4" stroke="none" fill="rgb(0,76,136)"/>
+ <file isSvgFile="true" prePath="keypads" imgSize="22,22" numSizes="1" file="images/keyboard-grab-dark.svg" numUses="2" stroke="none" fill="none"/>
+ <file isSvgFile="true" imgSize="72,32" numSizes="1" file="images/btn_rect_dwn.svg" numUses="2" stroke="none" fill="rgb(237,237,237)"/>
+ <file isSvgFile="true" imgSize="72,32" numSizes="1" file="images/btn_rect_grayup.svg" numUses="2" stroke="none" fill="rgb(237,237,237)"/>
+ <file isSvgFile="true" imgSize="34,34" numSizes="1" file="images/dwn_arrow_ico.svg" numUses="2" stroke="none" fill="none"/>
+ <file isSvgFile="true" imgSize="34,34" numSizes="1" file="images/up_arrow_ico.svg" numUses="2" stroke="none" fill="none"/>
+ <file isSvgFile="true" prePath="keypads" imgSize="116,49" numSizes="2" file="images/btnshift_icon.svg" numUses="2" stroke="none" fill="rgb(76,76,77)"/>
+ <file isSvgFile="true" prePath="keypads" imgSize="96,49" numSizes="2" file="images/btnback_icon.svg" numUses="2" stroke="none" fill="rgb(76,76,77)"/>
+ <file isSvgFile="true" prePath="keypads" imgSize="96,49" numSizes="2" file="images/btnenter_icon.svg" numUses="2" stroke="none" fill="rgb(76,76,77)"/>
+ <file isSvgFile="true" prePath="keypads" imgSize="49,49" numSizes="2" file="images/btnleft_icon.svg" numUses="2" stroke="none" fill="rgb(76,76,77)"/>
+ <file isSvgFile="true" prePath="keypads" imgSize="49,49" numSizes="2" file="images/btnright_icon.svg" numUses="2" stroke="none" fill="rgb(76,76,77)"/>
+ <file isSvgFile="true" prePath="keypads" imgSize="79,49" numSizes="1" file="images/btntab_icon.svg" numUses="1" stroke="none" fill="rgb(76,76,77)"/>
+ <file isSvgFile="true" prePath="keypads" imgSize="100,49" numSizes="1" file="images/btncaps_icon.svg" numUses="1" stroke="none" fill="rgb(76,76,77)"/>
+ <file isSvgFile="true" prePath="keypads" imgSize="16,15" numSizes="1" file="images/keyboard-grab-dark.svg" numUses="1" stroke="none" fill="rgb(23,30,40)"/>
+ <file isSvgFile="true" prePath="keypads" imgSize="48,48" numSizes="1" file="images/btndown_icon.svg" numUses="1" stroke="none" fill="rgb(76,76,77)"/>
+ <file isSvgFile="true" prePath="keypads" imgSize="48,48" numSizes="1" file="images/btnup_icon.svg" numUses="1" stroke="none" fill="rgb(76,76,77)"/>
+</files>

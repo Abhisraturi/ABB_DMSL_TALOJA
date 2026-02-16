@@ -1,0 +1,317 @@
+<wgtPage projectType="HMI Project" rev="1">
+ <object class="DialogWgt" staticFile="opt/dialog2.png" downloadPrepDone="true" dynPosition="false" titlebar="true" singleInstance="true" staticOptEnable="true" titleName="" px="0" id="Dialog2" py="0" dataWndSize="0,70" pageType="modal" pageName="Dialog2" pageSize="1500,800" usedFonts="Roboto Medium,Roboto">
+  <wgtStyle x="0" y="0" fitToSize="1" ver="040502544" width="1500" height="800" v="04.05.02.544"/>
+  <object class="PageMLTextMgrWgt" mlFileName="" id="_PageMLTextMgrWgt" mgrType="Page">
+   <wgtStyle x="0" y="0" width="0" height="0"/>
+   <langs defLangId="L1" curLangId="L1">
+    <lang langId="L1" name="Lang1" removable="false" writingsystem="Any" keypads=";;" langCode="en-US" defaultFont="Roboto"/>
+   </langs>
+   <MLTexts>
+    <MLText id="0" L1="Analyzer-02"/>
+    <MLText id="3" L1="N0 VALUE"/>
+    <MLText id="4" L1="ANALYSER-2 VALUE"/>
+    <MLText id="7" L1="Timestamp"/>
+    <MLText id="8" L1="From:"/>
+    <MLText id="9" L1="Data"/>
+    <MLText id="11" L1="To:"/>
+    <MLText id="12" L1="Timestamp"/>
+    <MLText id="16" L1="Start time"/>
+    <MLText id="17" L1="End time"/>
+    <MLText id="25" L1="Refresh"/>
+    <MLText id="37" L1="Close"/>
+    <MLText id="70" L1="Print"/>
+   </MLTexts>
+  </object>
+  <object class="GroupWgt" customType="ButtonsWithLabel" id="BtnStd6">
+   <wgtStyle x="1406" y="19" cx="36" cy="16" width="72" height="32"/>
+   <links>
+    <attr attrName="bdrImage" alias="ButtonWgt.bdrImage;ImageWgt1.bdrImage"/>
+   </links>
+   <object class="ButtonWgt" id="BtnStd6.btn" hmiStyle="hmi-name:smooth; hmi-shape:rect; hmi-type:btn; type:btn">
+    <wgtStyle type="momentary" releasePath="images\btn_rect_grayup.svg" x="0" form="standard" pushColor="rgb(128,128,0)" needlePath="images\Btn_rect_Dwn.svg" y="0" bdrSize="0.17,0.17,0.15,0.16" cx="36" cy="16" value="0" style="0" width="72" height="32" fill="rgb(237,237,237)" downFillColor="rgb(0,176,199)" bdrImageSize="54.00,44.00"/>
+    <links>
+     <action class="CloseDialogAction" actionID="1" closeParam="Selected" event="onMouseUp" actionWgt="_PageMgr" pageName="" attribute="onMouseRelease"/>
+    </links>
+   </object>
+   <object class="LabelWgt" id="BtnStd6.lbl" hmiStyle="hmi-type:wgtlabel">
+    <wgtStyle font-size="12" wrapping="true" cx="32" cy="14.55" x="2.67" y="0.73" font-sizepx="13" height="29.82" font-color="rgb(76,76,77)" min-font-size="8" width="64" alignment="center" vert-align="middle" wrap-type="wordWrap" forcePaint="1" font-family="Roboto Medium" keypad-type="None" max-font-size="64"/>
+    <links>
+     <lang class="MLTextLink" textid="37">
+      <MLFontFamily L1="Roboto Medium"/>
+     </lang>
+    </links>
+   </object>
+  </object>
+  <object class="GroupWgt" customType="TrendTables" id="TrendTable">
+   <wgtStyle x="144.67" y="91" wgtStaticOpt="dynamic" cx="612.50" cy="278" width="1225" height="556" forcePaint="16">
+    <gridGroupLayout gridGlobalStrokeWidth="0" gridScrollSize="5" gridScrollAutohide="0" gridScrollImage="" gridHorOverFlow="2" gridVerUnderFlow="2" gridVerOverFlow="2" gridScrollBgColor="none" gridScrollColor="rgb(153,153,153)" gridScrollOffset="2" gridGlobalStrokeCollapsed="1" gridNCols="2" gridHorUnderFlow="2" gridGlobalStrokeMode="1" gridGlobalStrokeColor="rgb(255,0,0)" gridNRows="3">
+     <colProperties>
+      <colProperty rightMargin="0" leftStrokeColor="rgb(0,0,0)" rightStroke="0" rightStrokeColor="rgb(0,0,0)" leftMargin="0" leftStroke="0" minWidth="350" stretch="5" maxWidth="10000"/>
+      <colProperty rightMargin="1" leftStrokeColor="rgb(0,0,0)" rightStroke="0" rightStrokeColor="rgb(0,0,0)" leftMargin="0" leftStroke="0" minWidth="32" stretch="1" maxWidth="75"/>
+     </colProperties>
+     <rowProperties>
+      <rowProperty topStroke="0" backColor="none" selForColor="none" selBackColor="none" bottonMargin="0" bottonStroke="0" topStrokeColor="rgb(0,0,0)" bottonStrokeColor="rgb(0,0,0)" maxHeight="50" stretch="2" selStrokeColor="none" minHeight="50" topMargin="0"/>
+      <rowProperty topStroke="0" backColor="none" selForColor="none" selBackColor="none" bottonMargin="0" bottonStroke="0" topStrokeColor="rgb(0,0,0)" bottonStrokeColor="rgb(0,0,0)" maxHeight="10000" stretch="6" selStrokeColor="none" minHeight="0" topMargin="4"/>
+      <rowProperty topStroke="0" backColor="none" selForColor="none" selBackColor="none" bottonMargin="0" bottonStroke="0" topStrokeColor="rgb(0,0,0)" bottonStrokeColor="rgb(0,0,0)" maxHeight="39" stretch="1" selStrokeColor="none" minHeight="39" topMargin="5"/>
+     </rowProperties>
+    </gridGroupLayout>
+   </wgtStyle>
+   <links>
+    <attr attrName="__TableWgt_TrendSrcWgt_timeSpec" alias="*.TableWgt.TrendSrcWgt.timeSpec;*.Duration.dtTo.timeSpec;*.Duration.dtFrom.timeSpec"/>
+    <attr attrName="*.TableWgt.TrendSrcWgt.hasStaticHeader" alias="*.TableWgt.TrendSrcWgt.hasStaticHeader"/>
+    <attr attrName="__TrendSrcWgt_dateFormat" alias="*.TableWgt.TrendSrcWgt.dateFormat;*.Duration.dtTo.usingFormat;*.Duration.dtFrom.usingFormat"/>
+   </links>
+   <object class="GroupWgt" id="TrendTable.Buttons">
+    <wgtStyle verItemOverflow="0" horItemUnderflow="0" topMargin="0" minHeight="0" verItemUnderflow="0" rightMargin="0" cx="36.95" cy="17" x="1150" maxWidth="100000" y="522" rowSpan="1" aspectRatio="67:32" rowOcc="3" horItemOverflow="0" height="34" minWidth="0" preserveAspectRatio="0" width="74" bottonMargin="0" leftMargin="0" forcePaint="1" maxHeight="100000" colOcc="2" colSpan="1"/>
+    <object class="GroupWgt" customType="ButtonsWithIcon" id="TrendTable.Buttons.bckbtn">
+     <wgtStyle x="0" y="0" cx="16.88" cy="17" width="33.77" height="34" forcePaint="1"/>
+     <object class="ButtonWgt" id="TrendTable.Buttons.bckbtn.btn" hmiStyle="hmi-name:smooth; hmi-shape:rect; hmi-type:btn; type:btn">
+      <wgtStyle form="standard" pushColor="rgb(128,128,0)" bdrSize="0.17,0.17,0.15,0.16" type="momentary" fill="rgb(0,70,136)" cx="15.89" cy="17.01" x="0.99" y="0" height="34" downFillColor="rgb(0,176,199)" releasePath="images\btn_rect_blueup.svg" width="31.79" forcePaint="1" bdrImageSize="54.00,44.00" value="0" style="0" needlePath="images\btn_rect_dwn.svg"/>
+      <links>
+       <action class="ScrollTrendTableBackwardAction" actionID="1" trendDataSrc="TrendTable.TableWgt.TrendSrcWgt" event="onMouseClick" actionWgt="_TrendMgr" attribute="onMouseClick"/>
+      </links>
+     </object>
+     <object class="ImageWgt" id="TrendTable.Buttons.bckbtn.icoImg" hmiStyle="hmi-name:solid; hmi-type:icon">
+      <wgtStyle imagePath="images/dwn_arrow_ico.svg" x="0" y="0" stroke-width="2" cx="16.89" cy="17.01" stroke="rgb(237,237,237)" enableCache="true" width="33.77" height="34" fill="none" forcePaint="1"/>
+     </object>
+    </object>
+    <object class="GroupWgt" customType="ButtonsWithIcon" id="TrendTable.Buttons.fwdbtn">
+     <wgtStyle x="40.23" y="0" cx="16.88" cy="17" width="33.77" height="34" forcePaint="1"/>
+     <object class="ButtonWgt" id="TrendTable.Buttons.fwdbtn.btn" hmiStyle="hmi-name:smooth; hmi-shape:rect; hmi-type:btn; type:btn">
+      <wgtStyle form="standard" pushColor="rgb(128,128,0)" bdrSize="0.17,0.17,0.15,0.16" type="momentary" fill="rgb(0,70,136)" cx="15.89" cy="17.01" x="0.99" y="0" height="34" downFillColor="rgb(0,176,199)" releasePath="images\btn_rect_blueup.svg" width="31.79" forcePaint="1" bdrImageSize="54.00,44.00" value="0" style="0" needlePath="images\btn_rect_dwn.svg"/>
+      <links>
+       <action class="ScrollTrendTableForwardAction" actionID="1" trendDataSrc="TrendTable.TableWgt.TrendSrcWgt" event="onMouseClick" actionWgt="_TrendMgr" attribute="onMouseClick"/>
+      </links>
+     </object>
+     <object class="ImageWgt" id="TrendTable.Buttons.fwdbtn.icoImg" hmiStyle="hmi-name:solid; hmi-type:icon">
+      <wgtStyle imagePath="images/up_arrow_ico.svg" x="0" y="0" stroke-width="2" cx="16.89" cy="17.01" stroke="rgb(237,237,237)" enableCache="true" width="33.77" height="34" fill="none" forcePaint="1"/>
+     </object>
+    </object>
+   </object>
+   <object class="GroupWgt" id="TrendTable.Duration">
+    <wgtStyle verItemOverflow="0" horItemUnderflow="0" topMargin="0" minHeight="0" verItemUnderflow="0" rightMargin="0" cx="612" cy="25" x="0" maxWidth="100000" y="0" rowSpan="1" aspectRatio="548:53" rowOcc="1" horItemOverflow="0" height="50" minWidth="0" preserveAspectRatio="0" width="1224" bottonMargin="0" leftMargin="0" forcePaint="17" wgtStaticOpt="dynamic" maxHeight="100000" colOcc="1" colSpan="2"/>
+    <object class="LabelWgt" id="TrendTable.Duration.Title">
+     <wgtStyle font-size="10" wrapping="true" cx="1440.62" cy="19.80" x="0" y="0" font-sizepx="13" font-bold="true" height="17.38" font-color="rgb(76,76,77)" min-font-size="8" width="1224" vert-align="top" wrap-type="wordWrap" forcePaint="17" wgtStaticOpt="dynamic" font-family="Roboto Medium" keypad-type="None" max-font-size="64"/>
+     <links>
+      <lang class="MLTextLink" textid="4">
+       <MLFontFamily L1="Roboto Medium"/>
+      </lang>
+     </links>
+    </object>
+    <object class="LabelWgt" id="TrendTable.Duration.lblFrom">
+     <wgtStyle font-size="10" cx="52.52" cy="6.61" x="2.23" y="18.11" font-sizepx="13" font-bold="true" height="13.20" font-color="rgb(76,76,77)" min-font-size="8" width="104.99" vert-align="middle" wrap-type="wordWrap" forcePaint="17" wgtStaticOpt="dynamic" font-family="Roboto Medium" keypad-type="None" max-font-size="64"/>
+     <links>
+      <lang class="MLTextLink" textid="8">
+       <MLFontFamily L1="Roboto Medium"/>
+      </lang>
+     </links>
+    </object>
+    <object class="NumericWgt" id="TrendTable.Duration.dtFrom">
+     <wgtStyle form="date-time" min="0" timeSpec="local" font-size="10" step="1" cx="245.83" cy="9.62" x="116.13" numberFormat="0" showThousandSeparator="false" y="17.71" font-sizepx="13" height="13.99" font-color="rgb(76,76,77)" min-font-size="8" width="405.12" max="4096" vert-align="middle" wrap-type="wordWrap" forcePaint="25" usingFormat="DD/MMM/YYYY - hh:mm:ss" wgtStaticOpt="dynamic" font-family="Roboto" text="-1" value="-1" keypad-type="None" max-font-size="64"/>
+     <dataLinks>
+      <dataLink sourceType="Widget" tag="StartTime" dataSource="TrendTable.TableWgt.TrendSrcWgt" tagIndex="-1" readWrite="R" attribute="value"/>
+     </dataLinks>
+    </object>
+    <object class="NumericWgt" id="TrendTable.Duration.dtTo">
+     <wgtStyle form="date-time" min="0" timeSpec="local" font-size="10" step="1" cx="246.25" cy="13.66" x="116.32" numberFormat="0" showThousandSeparator="false" y="30.13" font-sizepx="13" height="19.87" font-color="rgb(76,77,77)" min-font-size="8" width="405.84" max="4096" vert-align="middle" wrap-type="wordWrap" forcePaint="89" usingFormat="DD/MMM/YYYY - hh:mm:ss" wgtStaticOpt="dynamic" font-family="Roboto" text="-1" value="-1" keypad-type="None" max-font-size="64"/>
+     <dataLinks>
+      <dataLink sourceType="Widget" tag="stopTime" dataSource="TrendTable.TableWgt.TrendSrcWgt" tagIndex="-1" readWrite="R" attribute="value"/>
+     </dataLinks>
+    </object>
+    <object class="LabelWgt" id="TrendTable.Duration.lblTo">
+     <wgtStyle font-size="10" cx="52.59" cy="9.38" x="2.23" y="30.69" font-sizepx="13" font-bold="true" height="18.74" font-color="rgb(76,76,77)" min-font-size="8" width="105.18" vert-align="middle" wrap-type="wordWrap" forcePaint="17" wgtStaticOpt="dynamic" font-family="Roboto Medium" keypad-type="None" max-font-size="64"/>
+     <links>
+      <lang class="MLTextLink" textid="11">
+       <MLFontFamily L1="Roboto Medium"/>
+      </lang>
+     </links>
+    </object>
+   </object>
+   <object class="GroupWgt" id="TrendTable.TableWgt">
+    <wgtStyle verItemOverflow="0" horItemUnderflow="0" topMargin="0" minHeight="0" verItemUnderflow="0" rightMargin="0" cx="612" cy="231.50" x="0" maxWidth="100000" y="54" rowSpan="1" aspectRatio="548:191" rowOcc="2" horItemOverflow="0" height="463" minWidth="0" preserveAspectRatio="0" width="1224" bottonMargin="0" leftMargin="0" forcePaint="17" wgtStaticOpt="dynamic" maxHeight="100000" colOcc="1" colSpan="2"/>
+    <object class="TableTrendSrcWgt" id="TrendTable.TableWgt.TrendSrcWgt">
+     <wgtStyle timeSpec="local" filterExp1="" filterExp2="" x="1103.40" y="337.99" dateFormat="dd/MMM/yyyy - hh:mm:ss" height="106.13" stopTime="0" width="100.51" hasStaticHeader="1" trendName="Trend2" filterCol1="" nRowsFetched="100" filterCol2="" forcePaint="24" wgtStaticOpt="dynamic" pageDuration="-1" startTime="-300" isFetchMode="1">
+      <header>
+       <col index="0"/>
+      </header>
+     </wgtStyle>
+     <dataLinks>
+      <dataLink class="TagMgrWgt" tagType="time" sourceType="Tag" tag="Strat_Time" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R" attribute="startTime"/>
+      <dataLink class="TagMgrWgt" tagType="time" sourceType="Tag" tag="End_Time" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R" attribute="stopTime"/>
+     </dataLinks>
+     <links>
+      <lang class="MLMsgLink:col:">
+       <MLFontFamily L1="Roboto"/>
+       <textid idx="0" val="7"/>
+      </lang>
+     </links>
+    </object>
+    <object class="TableGroupWgt" id="TrendTable.TableWgt.TableWgt">
+     <wgtStyle x="0" y="0" wgtStaticOpt="dynamic" cx="611.97" cy="226.95" width="1224" height="453.93" forcePaint="25">
+      <gridGroupLayout gridGlobalStrokeWidth="1" gridScrollSize="5" gridScrollAutohide="0" gridScrollImage="" gridHorOverFlow="2" gridVerUnderFlow="1" gridVerOverFlow="1" gridScrollBgColor="rgb(237,237,237)" gridScrollColor="rgb(0,70,136)" gridScrollOffset="0" gridGlobalStrokeCollapsed="1" gridNCols="2" gridHorUnderFlow="2" gridGlobalStrokeMode="1" gridGlobalStrokeColor="rgb(200,200,200)" gridNRows="2">
+       <colProperties>
+        <colProperty rightMargin="5" leftStrokeColor="rgb(230,230,230)" rightStroke="1" rightStrokeColor="rgb(230,230,230)" leftMargin="5" leftStroke="0" minWidth="150" stretch="3" maxWidth="10000"/>
+        <colProperty rightMargin="5" leftStrokeColor="rgb(230,230,230)" rightStroke="1" rightStrokeColor="rgb(230,230,230)" leftMargin="5" leftStroke="1" minWidth="60" stretch="3" maxWidth="100000"/>
+       </colProperties>
+       <rowProperties>
+        <rowProperty topStroke="0" backColor="none" selForColor="none" selBackColor="none" bottonMargin="2" bottonStroke="1" topStrokeColor="rgb(230,230,230)" bottonStrokeColor="rgb(230,230,230)" maxHeight="32" stretch="2" selStrokeColor="none" minHeight="32" topMargin="2"/>
+        <rowProperty topStroke="0" backColor="none" selForColor="none" selBackColor="none" bottonMargin="2" bottonStroke="1" topStrokeColor="rgb(230,230,230)" bottonStrokeColor="rgb(230,230,230)" maxHeight="32" stretch="2" selStrokeColor="none" minHeight="32" topMargin="2"/>
+       </rowProperties>
+      </gridGroupLayout>
+     </wgtStyle>
+     <dataLinks>
+      <dataLink sourceType="Widget" tag="model" dataSource="TrendTable.TableWgt.TrendSrcWgt" tagIndex="-1" readWrite="R" attribute="tableModel"/>
+     </dataLinks>
+     <object class="LabelWgt" id="TrendTable.TableWgt.TableWgt.label1">
+      <wgtStyle verItemOverflow="0" horItemUnderflow="0" topMargin="0" font-size="10" minHeight="0" verItemUnderflow="0" wrapping="true" rightMargin="0" cx="300.50" cy="12.79" x="5" maxWidth="100000" y="2" rowSpan="1" aspectRatio="2:1" rowOcc="1" horItemOverflow="0" height="27" font-sizepx="13" font-bold="true" minWidth="0" font-color="rgb(76,76,77)" preserveAspectRatio="0" width="601" min-font-size="8" bottonMargin="0" vert-align="middle" wrap-type="wordWrap" leftMargin="0" forcePaint="25" wgtStaticOpt="dynamic" font-family="Roboto Medium" maxHeight="100000" keypad-type="None" colOcc="1" colSpan="1" max-font-size="64"/>
+      <dataLinks>
+       <dataLink sourceType="Widget" tag="TimeStamp" dataSource="TrendTable.TableWgt.TrendSrcWgt" tagIndex="-1" readWrite="R" attribute="text"/>
+      </dataLinks>
+      <links>
+       <lang class="MLTextLink" textid="12">
+        <MLFontFamily L1="Roboto Medium"/>
+       </lang>
+      </links>
+     </object>
+     <object class="LabelWgt" id="TrendTable.TableWgt.TableWgt.label2">
+      <wgtStyle preserveAspectRatio="0" wrap-type="wordWrap" topMargin="0" font-size="10" verItemUnderflow="0" height="27" colSpan="1" font-sizepx="13" minHeight="0" maxWidth="100000" maxHeight="100000" wgtStaticOpt="dynamic" font-family="Roboto Medium" leftMargin="0" verItemOverflow="0" rightMargin="0" colOcc="2" min-font-size="8" width="601" rowSpan="1" bottonMargin="0" forcePaint="25" cx="300.50" cy="12.79" max-font-size="64" alignment="center" horItemUnderflow="0" aspectRatio="132:49" vert-align="middle" keypad-type="None" x="617" font-bold="true" wrapping="true" y="2" font-color="rgb(76,76,77)" horItemOverflow="0" rowOcc="1" minWidth="0"/>
+      <dataLinks>
+       <dataLink sourceType="Widget" tag="NO VALUE" dataSource="TrendTable.TableWgt.TrendSrcWgt" tagIndex="-1" readWrite="R" attribute="text"/>
+      </dataLinks>
+      <links>
+       <lang class="MLTextLink" textid="3">
+        <MLFontFamily L1="Roboto Medium"/>
+       </lang>
+      </links>
+     </object>
+     <object class="LabelWgt" id="TrendTable.TableWgt.TableWgt.label7">
+      <wgtStyle preserveAspectRatio="0" wrap-type="wordWrap" topMargin="0" font-size="10" verItemUnderflow="0" height="27" colSpan="1" font-sizepx="13" minHeight="0" maxWidth="100000" maxHeight="100000" wgtStaticOpt="dynamic" font-family="Roboto" leftMargin="0" verItemOverflow="0" rightMargin="0" colOcc="1" min-font-size="8" width="601" rowSpan="1" bottonMargin="0" forcePaint="25" cx="300.50" cy="12.79" max-font-size="64" alignment="center" horItemUnderflow="0" aspectRatio="76:39" vert-align="middle" keypad-type="None" x="5" font-bold="true" wrapping="true" y="34" font-color="rgb(76,76,77)" horItemOverflow="0" rowOcc="2" minWidth="0"/>
+      <dataLinks>
+       <dataLink sourceType="Widget" tag="TimeStamp" dataSource="TrendTable.TableWgt.TrendSrcWgt" tagIndex="-1" readWrite="R" attribute="text"/>
+      </dataLinks>
+      <links>
+       <lang class="MLTextLink" textid="9"/>
+      </links>
+     </object>
+     <object class="NumericWgt" id="TrendTable.TableWgt.TableWgt.field1">
+      <wgtStyle step="1" preserveAspectRatio="0" max="32767" wrap-type="wordWrap" timeSpec="local" topMargin="0" font-size="10" numberFormat="0" verItemUnderflow="0" height="27" colSpan="1" font-sizepx="13" minHeight="0" maxWidth="100000" maxHeight="100000" wgtStaticOpt="dynamic" font-family="Roboto" text="99999" leftMargin="0" verItemOverflow="0" rightMargin="0" colOcc="2" min-font-size="8" width="601" rowSpan="1" bottonMargin="0" forcePaint="25" showThousandSeparator="false" cx="276.46" cy="12.15" max-font-size="64" usingFormat="" value="99999" min="-32768" alignment="center" horItemUnderflow="0" aspectRatio="5:2" vert-align="middle" keypad-type="None" x="617" font-bold="true" y="34" font-color="rgb(76,76,77)" horItemOverflow="0" form="Numeric" rowOcc="2" minWidth="0"/>
+      <dataLinks>
+       <dataLink sourceType="Widget" tag="N20 VALUE" dataSource="TrendTable.TableWgt.TrendSrcWgt" tagIndex="-1" readWrite="R" attribute="value"/>
+      </dataLinks>
+     </object>
+    </object>
+   </object>
+  </object>
+  <object class="GroupWgt" customType="ButtonsWithLabel" id="TrendTable.Duration.Refresh">
+   <wgtStyle x="1049" y="700" wgtStaticOpt="dynamic" cx="59" cy="23.50" width="118" height="47" forcePaint="16"/>
+   <object class="ButtonWgt" id="TrendTable.Duration.Refresh.btn" hmiStyle="hmi-name:smooth; hmi-shape:rect; hmi-type:btn; type:btn">
+    <wgtStyle form="standard" pushColor="rgb(128,128,0)" bdrSize="0.17,0.17,0.15,0.16" type="momentary" fill="rgb(0,70,136)" cx="59.02" cy="23.51" x="0" y="0" height="47" downFillColor="rgb(0,176,199)" releasePath="images\Btn_rect_blueUp.svg" width="118" forcePaint="17" bdrImageSize="54.00,44.00" wgtStaticOpt="dynamic" value="0" style="0" needlePath="images\Btn_rect_Dwn.svg"/>
+    <links>
+     <action class="RefreshTrendTableAction" actionID="1" trendDataSrc="TrendTable.TableWgt.TrendSrcWgt" event="onMouseClick" actionWgt="_TrendMgr" attribute="onMouseClick"/>
+    </links>
+   </object>
+   <object class="LabelWgt" id="TrendTable.Duration.Refresh.lbl" hmiStyle="hmi-type:wgtlabel">
+    <wgtStyle font-size="18" wrapping="true" cx="52.43" cy="21.38" x="4.38" y="1.08" font-sizepx="24" height="43.79" font-color="rgb(237,237,237)" min-font-size="8" width="104.90" alignment="center" vert-align="middle" wrap-type="wordWrap" forcePaint="17" wgtStaticOpt="dynamic" font-family="Roboto Medium" keypad-type="None" max-font-size="64"/>
+    <links>
+     <lang class="MLTextLink" textid="25">
+      <MLFontFamily L1="Roboto Medium"/>
+     </lang>
+    </links>
+   </object>
+  </object>
+  <object class="DateTimeWgt" id="dateTime1">
+   <wgtStyle timeSpec="local" font-size="16" selectionColor="rgb(0,176,199)" type="1" cx="106.70" cy="120.62" x="262" y="700" font-sizepx="21" height="47" readWrite="true" min-font-size="8" width="227" buttonBorderColor="rgb(0,0,0)" vert-align="top" buttonBackGroundUpColor="rgb(127,127,127)" wrap-type="wordWrap" forcePaint="8" usingFormat="dd/MM/yy - hh:mm:ss" font-family="Roboto" value="1622173784" text="1622173784" keypad-type="None" backgroundColor="rgb(237,237,237)" max-font-size="64" borderColor="rgb(200,200,200)"/>
+   <dataLinks>
+    <dataLink class="TagMgrWgt" tagType="time" sourceType="Tag" tag="Strat_Time" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R/W" attribute="value"/>
+   </dataLinks>
+  </object>
+  <object class="DateTimeWgt" id="dateTime2">
+   <wgtStyle timeSpec="local" font-size="16" selectionColor="rgb(0,176,199)" type="1" cx="106.70" cy="120.62" x="738" y="700" font-sizepx="21" height="47" readWrite="true" min-font-size="8" width="227" buttonBorderColor="rgb(0,0,0)" vert-align="top" buttonBackGroundUpColor="rgb(127,127,127)" wrap-type="wordWrap" forcePaint="8" usingFormat="dd/MM/yy - hh:mm:ss" font-family="Roboto" value="1622173784" text="1622173784" keypad-type="None" backgroundColor="rgb(237,237,237)" max-font-size="64" borderColor="rgb(200,200,200)"/>
+   <dataLinks>
+    <dataLink class="TagMgrWgt" tagType="time" sourceType="Tag" tag="End_Time" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R/W" attribute="value"/>
+   </dataLinks>
+  </object>
+  <object class="GroupWgt" customType="ButtonsWithLabel" id="BtnStd2">
+   <wgtStyle x="96" y="700" cx="69.50" cy="24.50" width="139" height="49"/>
+   <object class="ButtonWgt" id="BtnStd2.btn" hmiStyle="hmi-name:smooth; hmi-shape:rect; hmi-type:btn; type:btn">
+    <wgtStyle type="momentary" releasePath="images\Btn_rect_blueUp.svg" x="0" form="standard" pushColor="rgb(128,128,0)" needlePath="images\Btn_rect_Dwn.svg" y="0" bdrSize="0.17,0.17,0.15,0.16" cx="69.50" cy="24.50" value="0" style="0" width="139" height="49" fill="rgb(0,70,136)" downFillColor="rgb(0,176,199)" bdrImageSize="54.00,44.00"/>
+    <links>
+     <action class="DataTransferAction" actionID="1" NumValues="1" event="onMouseUp" actionWgt="_TagMgr" attribute="onMouseRelease">
+      <dataLinks>
+       <dataLink class="SysPropMgrWgt" tagType="long" sourceType="System" tag="System Time" dataSource="_SysPropMgr" tagIndex="-1" widgetType="Project" readWrite="R" attribute="SrcTag"/>
+       <dataLink class="TagMgrWgt" tagType="time" sourceType="Tag" tag="Strat_Time" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R" attribute="DestTag"/>
+      </dataLinks>
+     </action>
+     <action class="DataTransferAction" actionID="2" NumValues="1" event="onMouseUp" actionWgt="_TagMgr" attribute="onMouseRelease">
+      <dataLinks>
+       <dataLink class="SysPropMgrWgt" tagType="long" sourceType="System" tag="System Time" dataSource="_SysPropMgr" tagIndex="-1" widgetType="Project" readWrite="R" attribute="SrcTag"/>
+       <dataLink class="TagMgrWgt" tagType="time" sourceType="Tag" tag="End_Time" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R" attribute="DestTag"/>
+      </dataLinks>
+     </action>
+    </links>
+   </object>
+   <object class="LabelWgt" id="BtnStd2.lbl" hmiStyle="hmi-type:wgtlabel">
+    <wgtStyle font-size="18" wrapping="true" cx="61.78" cy="22.28" x="5.15" y="1.12" font-sizepx="24" height="45.66" font-color="rgb(237,237,237)" min-font-size="8" width="123.56" alignment="center" vert-align="middle" wrap-type="wordWrap" forcePaint="1" font-family="Roboto Medium" keypad-type="None" max-font-size="64"/>
+    <links>
+     <lang class="MLTextLink" textid="16">
+      <MLFontFamily L1="Roboto Medium"/>
+     </lang>
+    </links>
+   </object>
+  </object>
+  <object class="GroupWgt" customType="ButtonsWithLabel" id="BtnStd4">
+   <wgtStyle x="557" y="700" cx="59" cy="23.50" width="118" height="47"/>
+   <object class="ButtonWgt" id="BtnStd4.btn" hmiStyle="hmi-name:smooth; hmi-shape:rect; hmi-type:btn; type:btn">
+    <wgtStyle type="momentary" releasePath="images\Btn_rect_blueUp.svg" x="0" form="standard" pushColor="rgb(128,128,0)" needlePath="images\Btn_rect_Dwn.svg" y="0" bdrSize="0.17,0.17,0.15,0.16" cx="59" cy="23.50" value="0" style="0" width="118" height="47" fill="rgb(0,70,136)" downFillColor="rgb(0,176,199)" bdrImageSize="54.00,44.00"/>
+    <links>
+     <action class="DataTransferAction" actionID="1" NumValues="1" event="onMouseUp" actionWgt="_TagMgr" attribute="onMouseRelease">
+      <dataLinks>
+       <dataLink class="SysPropMgrWgt" tagType="long" sourceType="System" tag="System Time" dataSource="_SysPropMgr" tagIndex="-1" widgetType="Project" readWrite="R" attribute="SrcTag"/>
+       <dataLink class="TagMgrWgt" tagType="time" sourceType="Tag" tag="End_Time" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R" attribute="DestTag"/>
+      </dataLinks>
+     </action>
+    </links>
+   </object>
+   <object class="LabelWgt" id="BtnStd4.lbl" hmiStyle="hmi-type:wgtlabel">
+    <wgtStyle font-size="18" wrapping="true" cx="52.44" cy="21.37" x="4.38" y="1.07" font-sizepx="24" height="43.80" font-color="rgb(237,237,237)" min-font-size="8" width="104.89" alignment="center" vert-align="middle" wrap-type="wordWrap" forcePaint="1" font-family="Roboto Medium" keypad-type="None" max-font-size="64"/>
+    <links>
+     <lang class="MLTextLink" textid="17">
+      <MLFontFamily L1="Roboto Medium"/>
+     </lang>
+    </links>
+   </object>
+  </object>
+  <object class="LabelWgt" id="label1" static="true">
+   <wgtStyle frameColor="rgb(200,200,200)" font-size="14" wrapping="true" cx="61.46" cy="11.70" x="637" y="38" font-sizepx="19" font-bold="true" height="25" font-color="rgb(76,76,77)" min-font-size="8" width="119" alignment="center" vert-align="middle" wrap-type="wordWrap" font-family="Roboto" keypad-type="None" max-font-size="64"/>
+   <links>
+    <lang class="MLTextLink" textid="0"/>
+   </links>
+  </object>
+  <object class="GroupSubscribeWgt" id="Dialog2@$GroupSubscrWgt@$0">
+   <wgtStyle x="0" y="0" width="0" height="0"/>
+  </object>
+  <object class="GroupWgt" customType="ButtonsWithLabel" id="BtnStd1">
+   <wgtStyle x="1235" y="700" cx="59" cy="23.50" width="118" height="47"/>
+   <object class="ButtonWgt" id="BtnStd1.btn" hmiStyle="hmi-name:smooth; hmi-shape:rect; hmi-type:btn; type:btn">
+    <wgtStyle type="momentary" releasePath="images\Btn_rect_blueUp.svg" x="0" form="standard" pushColor="rgb(128,128,0)" needlePath="images\Btn_rect_Dwn.svg" y="0" bdrSize="0.17,0.17,0.15,0.16" cx="59" cy="23.50" value="0" style="0" width="118" height="47" fill="rgb(0,70,136)" downFillColor="rgb(0,176,199)" bdrImageSize="54.00,44.00"/>
+    <links>
+     <action class="PrintGraphicReportAction" folderPath="C:\DATA" actionID="1" enableSign="0" reportName="TrendTable2" fileName="%p_%n_%y%M%d_%h%m%s.pdf" event="onMouseUp" actionWgt="_PrintMgr" silent="1" attribute="onMouseRelease"/>
+    </links>
+   </object>
+   <object class="LabelWgt" id="BtnStd1.lbl" hmiStyle="hmi-type:wgtlabel">
+    <wgtStyle font-size="16" wrapping="true" cx="52.44" cy="21.37" x="4.38" y="1.07" font-sizepx="21" height="43.80" font-color="rgb(237,237,237)" min-font-size="8" width="104.89" alignment="center" vert-align="middle" wrap-type="wordWrap" forcePaint="1" font-family="Roboto Medium" keypad-type="None" max-font-size="64"/>
+    <links>
+     <lang class="MLTextLink" textid="70">
+      <MLFontFamily L1="Roboto Medium"/>
+     </lang>
+    </links>
+   </object>
+  </object>
+  <object class="NumericWgt" id="timedate1">
+   <wgtStyle frameColor="rgb(200,200,200)" form="date-time" min="0" timeSpec="local" font-size="14" step="1" cx="160.78" cy="20.26" x="1013.45" numberFormat="0" showThousandSeparator="false" y="20.50" font-sizepx="19" font-bold="true" height="34" font-color="rgb(76,76,77)" min-font-size="8" width="350" alignment="center" max="4096" vert-align="middle" wrap-type="wordWrap" forcePaint="8" usingFormat="DD/MM/YY - hh:mm:ss" font-family="Roboto" text="-1" value="-1" keypad-type="None" max-font-size="64"/>
+   <dataLinks>
+    <dataLink class="SysPropMgrWgt" sourceType="System" tag="System Time" dataSource="_SysPropMgr" widgetType="Project" readWrite="R" attribute="value"/>
+   </dataLinks>
+  </object>
+ </object>
+</wgtPage>

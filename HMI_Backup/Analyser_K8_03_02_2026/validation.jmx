@@ -1,0 +1,291 @@
+<wgtPage projectType="HMI Project" rev="1">
+ <object class="PageWgt" staticFile="opt/validation.png" downloadPrepDone="true" staticOptEnable="true" id="VALIDATION" dataWndSize="0,70" pageName="VALIDATION" pageSize="1920,1000" usedFonts="Arial">
+  <wgtStyle x="0" y="0" fitToSize="1" ver="040502544" color="rgb(127,255,212)" width="1920" height="1000" v="04.05.02.544"/>
+  <object class="ShapeWgt" id="rect1" static="true">
+   <wgtStyle x="2" y="-1.50" cx="454.84" cy="396.52" stroke="rgb(200,200,200)" width="940" height="793.03" fill="rgb(255,255,224)" nodeName="rect"/>
+  </object>
+  <object class="ShapeWgt" id="rect2" static="true">
+   <wgtStyle x="960" y="-1.50" cx="454.84" cy="396.52" stroke="rgb(200,200,200)" width="940" height="793.03" fill="rgb(255,255,224)" nodeName="rect"/>
+  </object>
+  <object class="PageMLTextMgrWgt" mlFileName="" id="_PageMLTextMgrWgt" mgrType="Page">
+   <wgtStyle x="0" y="0" width="0" height="0"/>
+   <langs defLangId="L1" curLangId="L1">
+    <lang langId="L1" name="Lang1" removable="false" writingsystem="Any" keypads=";;" langCode="en-US" defaultFont="Roboto"/>
+   </langs>
+   <MLTexts>
+    <MLText id="0" L1="HOME"/>
+    <MLText id="1" L1="TGH2 TO TGH3 ANALYSER"/>
+    <MLText id="2" L1="STACK ANALYSER"/>
+    <MLText id="3" L1="VALIDATION MODE "/>
+    <MLText id="4" L1="N2O VALIDATION"/>
+    <MLText id="10" L1="MEASURE MODE TGH2 TO TGH3 ANALYSER"/>
+    <MLText id="6" L1="MEASURE MODE STACK ANALYSER"/>
+    <MLText id="7" L1="N20 MID POINT VALIDATION"/>
+    <MLText id="9" L1="MID N2O VALIDATION"/>
+    <MLText id="57" L1="ZERO VALIDATION"/>
+   </MLTexts>
+  </object>
+  <object class="GroupWgt" customType="ButtonsWithLabel" id="BtnStd3">
+   <wgtStyle x="10.68" y="827.03" cx="97.75" cy="72.50" width="195.50" height="145"/>
+   <links>
+    <attr attrName="bdrImage" alias="ButtonWgt.bdrImage;ImageWgt1.bdrImage"/>
+   </links>
+   <object class="ButtonWgt" id="BtnStd3.btn" hmiStyle="hmi-name:smooth; hmi-shape:rect; hmi-type:btn; type:btn">
+    <wgtStyle form="standard" pushColor="rgb(128,128,0)" bdrSize="0.17,0.17,0.15,0.16" type="momentary" fill="rgb(0,70,136)" cx="97.75" cy="72.50" x="0" y="0" height="145" downFillColor="rgb(0,176,199)" releasePath="images\btn_rectround_blueup.svg" mtx="1,0,0,0,1,0,0,0,1" width="195.50" bdrImageSize="54.00,44.00" value="0" style="0" needlePath="images\Btn_rectRound_Dwn.svg"/>
+    <links>
+     <action class="LoadPageAction" actionID="1" event="onMouseClick" actionWgt="_PageMgr" pageName="main menu.jmx" attribute="onMouseClick"/>
+    </links>
+   </object>
+   <object class="LabelWgt" id="BtnStd3.lbl" hmiStyle="hmi-type:wgtlabel">
+    <wgtStyle font-size="24" wrapping="true" cx="86.88" cy="65.94" x="7.26" y="3.31" font-sizepx="32" font-bold="true" height="135.10" font-color="rgb(237,237,237)" mtx="1,0,0,0,1,0,0,0,1" min-font-size="8" width="173.78" alignment="center" vert-align="middle" wrap-type="wordWrap" forcePaint="1" font-family="Arial" keypad-type="None" max-font-size="64"/>
+    <links>
+     <lang class="MLTextLink" textid="0">
+      <MLFontFamily L1="Arial"/>
+     </lang>
+    </links>
+   </object>
+  </object>
+  <object class="GroupWgt" customType="ButtonsWithLabel" id="BtnStd5">
+   <wgtStyle x="234" y="107" cx="239.49" cy="51" width="479" height="102"/>
+   <object class="ButtonWgt" id="BtnStd5.btn" hmiStyle="hmi-name:smooth; hmi-shape:rect; hmi-type:btn; type:btn">
+    <wgtStyle form="standard" pushColor="rgb(128,128,0)" bdrSize="0.17,0.17,0.15,0.16" type="momentary" fill="rgb(0,70,136)" cx="239.49" cy="51" x="0" y="0" height="102" downFillColor="rgb(0,176,199)" releasePath="images\Btn_rect_blueUp.svg" mtx="1,0,0,0,1,0,0,0,1" width="479" forcePaint="8" bdrImageSize="54.00,44.00" value="0" style="0" needlePath="images\Btn_rect_Dwn.svg"/>
+    <dataLinks>
+     <dataLink class="TagMgrWgt" tagType="boolean" sourceType="Tag" tag="Application/Global_Variables/CAL_MODE_BIT" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R/W" attribute="value"/>
+     <dataLink class="TagMgrWgt" tagType="boolean" sourceType="Tag" tag="Application/Global_Variables/CAL_FLAG" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R/W" attribute="upColor">
+      <xForms>
+       <xForm class="ColorPaletteCustomXForm" ColorPaletteCustom="#ff0000;#00aa00" name="ColorPaletteCustom"/>
+      </xForms>
+     </dataLink>
+    </dataLinks>
+   </object>
+   <object class="LabelWgt" id="BtnStd5.lbl" hmiStyle="hmi-type:wgtlabel">
+    <wgtStyle font-size="24" wrapping="true" cx="212.89" cy="46.38" x="17.77" y="2.33" font-sizepx="32" font-bold="true" height="95.05" font-color="rgb(237,237,237)" mtx="1,0,0,0,1,0,0,0,1" min-font-size="8" width="425.78" alignment="center" vert-align="middle" wrap-type="wordWrap" forcePaint="1" font-family="Arial" keypad-type="None" max-font-size="64"/>
+    <links>
+     <lang class="MLTextLink" textid="3">
+      <MLFontFamily L1="Arial"/>
+     </lang>
+    </links>
+   </object>
+  </object>
+  <object class="GroupWgt" customType="ButtonsWithLabel" id="BtnStd6">
+   <wgtStyle x="234" y="265" cx="239.49" cy="51" width="479" height="102"/>
+   <object class="ButtonWgt" id="BtnStd6.btn" hmiStyle="hmi-name:smooth; hmi-shape:rect; hmi-type:btn; type:btn">
+    <wgtStyle form="standard" pushColor="rgb(128,128,0)" bdrSize="0.17,0.17,0.15,0.16" type="momentary" fill="rgb(0,70,136)" cx="239.49" cy="51" x="0" y="0" height="102" downFillColor="rgb(0,176,199)" releasePath="images\Btn_rect_blueUp.svg" mtx="1,0,0,0,1,0,0,0,1" width="479" forcePaint="8" bdrImageSize="54.00,44.00" value="0" style="0" needlePath="images\Btn_rect_Dwn.svg"/>
+    <dataLinks>
+     <dataLink class="TagMgrWgt" tagType="boolean" sourceType="Tag" tag="Application/Global_Variables/ZERO_CAL_HMI" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R/W" attribute="value"/>
+     <dataLink class="TagMgrWgt" tagType="boolean" sourceType="Tag" tag="Application/Global_Variables/ZERO_CAL_ON" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R/W" attribute="upColor">
+      <xForms>
+       <xForm class="ColorPaletteCustomXForm" ColorPaletteCustom="#ff0000;#00aa00" name="ColorPaletteCustom">
+        <value i="0">0</value>
+        <value i="1">1</value>
+       </xForm>
+      </xForms>
+     </dataLink>
+    </dataLinks>
+   </object>
+   <object class="LabelWgt" id="BtnStd6.lbl" hmiStyle="hmi-type:wgtlabel">
+    <wgtStyle font-size="24" wrapping="true" cx="212.89" cy="46.39" x="17.77" y="2.33" font-sizepx="32" font-bold="true" height="95.05" font-color="rgb(237,237,237)" mtx="1,0,0,0,1,0,0,0,1" min-font-size="8" width="425.78" alignment="center" vert-align="middle" wrap-type="wordWrap" forcePaint="1" font-family="Arial" keypad-type="None" max-font-size="64"/>
+    <links>
+     <lang class="MLTextLink" textid="57">
+      <MLFontFamily L1="Arial"/>
+     </lang>
+    </links>
+   </object>
+  </object>
+  <object class="GroupSubscribeWgt" id="VALIDATION@$GroupSubscrWgt@$0">
+   <wgtStyle x="0" y="0" width="0" height="0"/>
+  </object>
+  <object class="GroupWgt" customType="ButtonsWithLabel" id="BtnStd7">
+   <wgtStyle x="234" y="600" cx="239.49" cy="51" width="479" height="102"/>
+   <object class="ButtonWgt" id="BtnStd7.btn" hmiStyle="hmi-name:smooth; hmi-shape:rect; hmi-type:btn; type:btn">
+    <wgtStyle form="standard" pushColor="rgb(128,128,0)" bdrSize="0.17,0.17,0.15,0.16" type="momentary" fill="rgb(0,70,136)" cx="239.49" cy="51" x="0" y="0" height="102" downFillColor="rgb(0,176,199)" releasePath="images\Btn_rect_blueUp.svg" mtx="1,0,0,0,1,0,0,0,1" width="479" forcePaint="8" bdrImageSize="54.00,44.00" value="0" style="0" needlePath="images\Btn_rect_Dwn.svg"/>
+    <dataLinks>
+     <dataLink class="TagMgrWgt" tagType="boolean" sourceType="Tag" tag="Application/Global_Variables/VALIDATION_N2O_HMI" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R/W" attribute="value"/>
+     <dataLink class="TagMgrWgt" tagType="boolean" sourceType="Tag" tag="Application/Global_Variables/N2O_SPAN_CAL_ON" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R/W" attribute="upColor">
+      <xForms>
+       <xForm class="ColorPaletteCustomXForm" ColorPaletteCustom="#ff0000;#00aa00" name="ColorPaletteCustom"/>
+      </xForms>
+     </dataLink>
+    </dataLinks>
+   </object>
+   <object class="LabelWgt" id="BtnStd7.lbl" hmiStyle="hmi-type:wgtlabel">
+    <wgtStyle font-size="24" wrapping="true" cx="212.89" cy="46.38" x="17.77" y="2.33" font-sizepx="32" font-bold="true" height="95.06" font-color="rgb(237,237,237)" mtx="1,0,0,0,1,0,0,0,1" min-font-size="8" width="425.78" alignment="center" vert-align="middle" wrap-type="wordWrap" forcePaint="1" font-family="Arial" keypad-type="None" max-font-size="64"/>
+    <links>
+     <lang class="MLTextLink" textid="4">
+      <MLFontFamily L1="Arial"/>
+     </lang>
+    </links>
+   </object>
+  </object>
+  <object class="GroupWgt" customType="ButtonsWithLabel" id="BtnStd8">
+   <wgtStyle x="234" y="425" cx="239.49" cy="51" width="479" height="102"/>
+   <object class="ButtonWgt" id="BtnStd8.btn" hmiStyle="hmi-name:smooth; hmi-shape:rect; hmi-type:btn; type:btn">
+    <wgtStyle form="standard" pushColor="rgb(128,128,0)" bdrSize="0.17,0.17,0.15,0.16" type="momentary" fill="rgb(0,70,136)" cx="239.49" cy="51" x="0" y="0" height="102" downFillColor="rgb(0,176,199)" releasePath="images\Btn_rect_blueUp.svg" mtx="1,0,0,0,1,0,0,0,1" width="479" forcePaint="8" bdrImageSize="54.00,44.00" value="0" style="0" needlePath="images\Btn_rect_Dwn.svg"/>
+    <dataLinks>
+     <dataLink class="TagMgrWgt" tagType="boolean" sourceType="Tag" tag="Application/Global_Variables/VALIDATION_N2OMID_HMI" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R/W" attribute="value"/>
+     <dataLink class="TagMgrWgt" tagType="boolean" sourceType="Tag" tag="Application/Global_Variables/N2O_MID_CAL_ON" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R/W" attribute="upColor">
+      <xForms>
+       <xForm class="ColorPaletteCustomXForm" ColorPaletteCustom="#ff0000;#00aa00" name="ColorPaletteCustom"/>
+      </xForms>
+     </dataLink>
+    </dataLinks>
+   </object>
+   <object class="LabelWgt" id="BtnStd8.lbl" hmiStyle="hmi-type:wgtlabel">
+    <wgtStyle font-size="24" wrapping="true" cx="212.89" cy="46.39" x="17.77" y="2.33" font-sizepx="32" font-bold="true" height="95.05" font-color="rgb(237,237,237)" mtx="1,0,0,0,1,0,0,0,1" min-font-size="8" width="425.78" alignment="center" vert-align="middle" wrap-type="wordWrap" forcePaint="1" font-family="Arial" keypad-type="None" max-font-size="64"/>
+    <links>
+     <lang class="MLTextLink" textid="7">
+      <MLFontFamily L1="Arial"/>
+     </lang>
+    </links>
+   </object>
+  </object>
+  <object class="GroupWgt" customType="ButtonsWithLabel" id="BtnStd10">
+   <wgtStyle x="234" y="827.69" cx="353.98" cy="72.50" width="708" height="145"/>
+   <object class="ButtonWgt" id="BtnStd10.btn" hmiStyle="hmi-name:smooth; hmi-shape:rect; hmi-type:btn; type:btn">
+    <wgtStyle form="standard" pushColor="rgb(128,128,0)" bdrSize="0.17,0.17,0.15,0.16" type="momentary" fill="rgb(0,70,136)" cx="353.98" cy="72.50" x="0" y="0" height="145" downFillColor="rgb(0,176,199)" releasePath="images\Btn_rect_blueUp.svg" mtx="1,0,0,0,1,0,0,0,1" width="708" forcePaint="8" bdrImageSize="54.00,44.00" value="0" style="0" needlePath="images\Btn_rect_Dwn.svg"/>
+    <dataLinks>
+     <dataLink class="TagMgrWgt" tagType="boolean" sourceType="Tag" tag="Application/Global_Variables/PRB1_MEAS_BIT" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R/W" attribute="value"/>
+     <dataLink class="TagMgrWgt" tagType="boolean" sourceType="Tag" tag="Application/Global_Variables/PRB1_MEAS" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R/W" attribute="upColor">
+      <xForms>
+       <xForm class="ColorPaletteCustomXForm" ColorPaletteCustom="#ff0000;#00aa00" name="ColorPaletteCustom"/>
+      </xForms>
+     </dataLink>
+    </dataLinks>
+   </object>
+   <object class="LabelWgt" id="BtnStd10.lbl" hmiStyle="hmi-type:wgtlabel">
+    <wgtStyle font-size="22" wrapping="true" cx="314.67" cy="65.94" x="26.27" y="3.31" font-sizepx="29" font-bold="true" height="135.13" font-color="rgb(237,237,237)" mtx="1,0,0,0,1,0,0,0,1" min-font-size="8" width="629.34" alignment="center" vert-align="middle" wrap-type="wordWrap" forcePaint="1" font-family="Arial" keypad-type="None" max-font-size="64"/>
+    <links>
+     <lang class="MLTextLink" textid="10">
+      <MLFontFamily L1="Arial"/>
+     </lang>
+    </links>
+   </object>
+  </object>
+  <object class="LabelWgt" id="label7" static="true">
+   <wgtStyle frameColor="rgb(200,200,200)" font-size="24" wrapping="true" cx="284.78" cy="21.15" x="206.50" y="17" font-sizepx="32" font-bold="true" height="46" font-color="rgb(0,0,255)" min-font-size="8" width="555" alignment="center" vert-align="middle" wrap-type="wordWrap" font-underline="true" font-family="Arial" keypad-type="None" max-font-size="64"/>
+   <links>
+    <lang class="MLTextLink" textid="1">
+     <MLFontFamily L1="Arial"/>
+    </lang>
+   </links>
+  </object>
+  <object class="GroupWgt" customType="ButtonsWithLabel" id="BtnStd11">
+   <wgtStyle x="990" y="828.35" cx="425.98" cy="72" width="852" height="144"/>
+   <object class="ButtonWgt" id="BtnStd11.btn" hmiStyle="hmi-name:smooth; hmi-shape:rect; hmi-type:btn; type:btn">
+    <wgtStyle form="standard" pushColor="rgb(128,128,0)" bdrSize="0.17,0.17,0.15,0.16" type="momentary" fill="rgb(0,70,136)" cx="425.98" cy="72" x="0" y="0" height="144" downFillColor="rgb(0,176,199)" releasePath="images\Btn_rect_blueUp.svg" mtx="1,0,0,0,1,0,0,0,1" width="852" forcePaint="8" bdrImageSize="54.00,44.00" value="0" style="0" needlePath="images\Btn_rect_Dwn.svg"/>
+    <dataLinks>
+     <dataLink class="TagMgrWgt" tagType="boolean" sourceType="Tag" tag="Application/Global_Variables/PRB1_MEAS_BIT1" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R/W" attribute="value"/>
+     <dataLink class="TagMgrWgt" tagType="boolean" sourceType="Tag" tag="Application/Global_Variables/DIS_MP01" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R/W" attribute="upColor">
+      <xForms>
+       <xForm class="ColorPaletteCustomXForm" ColorPaletteCustom="#ff0000;#00aa00" name="ColorPaletteCustom"/>
+      </xForms>
+     </dataLink>
+    </dataLinks>
+   </object>
+   <object class="LabelWgt" id="BtnStd11.lbl" hmiStyle="hmi-type:wgtlabel">
+    <wgtStyle font-size="22" wrapping="true" cx="378.67" cy="65.48" x="31.61" y="3.29" font-sizepx="29" font-bold="true" height="134.19" font-color="rgb(237,237,237)" mtx="1,0,0,0,1,0,0,0,1" min-font-size="8" width="757.34" alignment="center" vert-align="middle" wrap-type="wordWrap" forcePaint="1" font-family="Arial" keypad-type="None" max-font-size="64"/>
+    <links>
+     <lang class="MLTextLink" textid="6">
+      <MLFontFamily L1="Arial"/>
+     </lang>
+    </links>
+   </object>
+  </object>
+  <object class="LabelWgt" id="label2" static="true">
+   <wgtStyle frameColor="rgb(200,200,200)" font-size="24" wrapping="true" cx="182.98" cy="20.25" x="1261.55" y="17" font-sizepx="32" font-bold="true" height="44" font-color="rgb(0,0,255)" min-font-size="8" width="356.25" alignment="center" vert-align="middle" wrap-type="wordWrap" font-underline="true" font-family="Arial" keypad-type="None" max-font-size="64"/>
+   <links>
+    <lang class="MLTextLink" textid="2">
+     <MLFontFamily L1="Arial"/>
+    </lang>
+   </links>
+  </object>
+  <object class="GroupWgt" customType="ButtonsWithLabel" id="BtnStd12">
+   <wgtStyle x="1193.47" y="107" cx="220.50" cy="51" width="441" height="102"/>
+   <object class="ButtonWgt" id="BtnStd12.btn" hmiStyle="hmi-name:smooth; hmi-shape:rect; hmi-type:btn; type:btn">
+    <wgtStyle form="standard" pushColor="rgb(128,128,0)" bdrSize="0.17,0.17,0.15,0.16" type="momentary" fill="rgb(0,70,136)" cx="220.49" cy="51" x="0" y="0" height="102" downFillColor="rgb(0,176,199)" releasePath="images\Btn_rect_blueUp.svg" mtx="1,0,0,0,1,0,0,0,1" width="441" forcePaint="8" bdrImageSize="54.00,44.00" value="0" style="0" needlePath="images\Btn_rect_Dwn.svg"/>
+    <dataLinks>
+     <dataLink class="TagMgrWgt" tagType="boolean" sourceType="Tag" tag="Application/Global_Variables/VALIDATION_FLAG" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R/W" attribute="upColor">
+      <xForms>
+       <xForm class="ColorPaletteCustomXForm" ColorPaletteCustom="#ff0000;#00aa00" name="ColorPaletteCustom"/>
+      </xForms>
+     </dataLink>
+     <dataLink class="TagMgrWgt" tagType="boolean" sourceType="Tag" tag="Application/Global_Variables/VALIDATION_BIT" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R/W" attribute="value"/>
+    </dataLinks>
+   </object>
+   <object class="LabelWgt" id="BtnStd12.lbl" hmiStyle="hmi-type:wgtlabel">
+    <wgtStyle font-size="24" wrapping="true" cx="196" cy="46.38" x="16.36" y="2.33" font-sizepx="32" font-bold="true" height="95.05" font-color="rgb(237,237,237)" mtx="1,0,0,0,1,0,0,0,1" min-font-size="8" width="392.01" alignment="center" vert-align="middle" wrap-type="wordWrap" forcePaint="1" font-family="Arial" keypad-type="None" max-font-size="64"/>
+    <links>
+     <lang class="MLTextLink" textid="3">
+      <MLFontFamily L1="Arial"/>
+     </lang>
+    </links>
+   </object>
+  </object>
+  <object class="GroupWgt" customType="ButtonsWithLabel" id="BtnStd13">
+   <wgtStyle x="1192.94" y="265" cx="220.75" cy="51" width="441.53" height="102"/>
+   <object class="ButtonWgt" id="BtnStd13.btn" hmiStyle="hmi-name:smooth; hmi-shape:rect; hmi-type:btn; type:btn">
+    <wgtStyle form="standard" pushColor="rgb(128,128,0)" bdrSize="0.17,0.17,0.15,0.16" type="momentary" fill="rgb(0,70,136)" cx="220.75" cy="51" x="0" y="0" height="102" downFillColor="rgb(0,176,199)" releasePath="images\Btn_rect_blueUp.svg" mtx="1,0,0,0,1,0,0,0,1" width="441.53" forcePaint="8" bdrImageSize="54.00,44.00" value="0" style="0" needlePath="images\Btn_rect_Dwn.svg"/>
+    <dataLinks>
+     <dataLink class="TagMgrWgt" tagType="boolean" sourceType="Tag" tag="Application/Global_Variables/ZERO_CAL_HMIA" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R/W" attribute="value"/>
+     <dataLink class="TagMgrWgt" tagType="boolean" sourceType="Tag" tag="Application/Global_Variables/ZERO_VAL_SELE" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R/W" attribute="upColor">
+      <xForms>
+       <xForm class="ColorPaletteCustomXForm" ColorPaletteCustom="#ff0000;#00aa00" name="ColorPaletteCustom"/>
+      </xForms>
+     </dataLink>
+    </dataLinks>
+   </object>
+   <object class="LabelWgt" id="BtnStd13.lbl" hmiStyle="hmi-type:wgtlabel">
+    <wgtStyle font-size="24" wrapping="true" cx="196.24" cy="46.39" x="16.38" y="2.33" font-sizepx="32" font-bold="true" height="95.05" font-color="rgb(237,237,237)" mtx="1,0,0,0,1,0,0,0,1" min-font-size="8" width="392.48" alignment="center" vert-align="middle" wrap-type="wordWrap" forcePaint="1" font-family="Arial" keypad-type="None" max-font-size="64"/>
+    <links>
+     <lang class="MLTextLink" textid="57">
+      <MLFontFamily L1="Arial"/>
+     </lang>
+    </links>
+   </object>
+  </object>
+  <object class="GroupWgt" customType="ButtonsWithLabel" id="BtnStd15">
+   <wgtStyle x="1191.81" y="600" cx="221.32" cy="51" width="442.66" height="102"/>
+   <object class="ButtonWgt" id="BtnStd15.btn" hmiStyle="hmi-name:smooth; hmi-shape:rect; hmi-type:btn; type:btn">
+    <wgtStyle form="standard" pushColor="rgb(128,128,0)" bdrSize="0.17,0.17,0.15,0.16" type="momentary" fill="rgb(0,70,136)" cx="221.32" cy="51" x="0" y="0" height="102" downFillColor="rgb(0,176,199)" releasePath="images\Btn_rect_blueUp.svg" mtx="1,0,0,0,1,0,0,0,1" width="442.66" forcePaint="8" bdrImageSize="54.00,44.00" value="0" style="0" needlePath="images\Btn_rect_Dwn.svg"/>
+    <dataLinks>
+     <dataLink class="TagMgrWgt" tagType="boolean" sourceType="Tag" tag="Application/Global_Variables/VALIDATION_N2O_HMIA" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R/W" attribute="value"/>
+     <dataLink class="TagMgrWgt" tagType="boolean" sourceType="Tag" tag="Application/Global_Variables/SPAN_HIGH_VAL_SELE" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R/W" attribute="upColor">
+      <xForms>
+       <xForm class="ColorPaletteCustomXForm" ColorPaletteCustom="#ff0000;#00aa00" name="ColorPaletteCustom"/>
+      </xForms>
+     </dataLink>
+    </dataLinks>
+   </object>
+   <object class="LabelWgt" id="BtnStd15.lbl" hmiStyle="hmi-type:wgtlabel">
+    <wgtStyle font-size="24" wrapping="true" cx="196.74" cy="46.38" x="16.42" y="2.33" font-sizepx="32" font-bold="true" height="95.06" font-color="rgb(237,237,237)" mtx="1,0,0,0,1,0,0,0,1" min-font-size="8" width="393.48" alignment="center" vert-align="middle" wrap-type="wordWrap" forcePaint="1" font-family="Arial" keypad-type="None" max-font-size="64"/>
+    <links>
+     <lang class="MLTextLink" textid="4">
+      <MLFontFamily L1="Arial"/>
+     </lang>
+    </links>
+   </object>
+  </object>
+  <object class="GroupWgt" customType="ButtonsWithLabel" id="BtnStd1">
+   <wgtStyle x="1192.34" y="430" cx="221.52" cy="51" width="443.06" height="102"/>
+   <object class="ButtonWgt" id="BtnStd1.btn" hmiStyle="hmi-name:smooth; hmi-shape:rect; hmi-type:btn; type:btn">
+    <wgtStyle form="standard" pushColor="rgb(128,128,0)" bdrSize="0.17,0.17,0.15,0.16" type="momentary" fill="rgb(0,70,136)" cx="221.52" cy="51" x="0" y="0" height="102" downFillColor="rgb(0,176,199)" releasePath="images\Btn_rect_blueUp.svg" mtx="1,0,0,0,1,0,0,0,1" width="443.06" forcePaint="8" bdrImageSize="54.00,44.00" value="0" style="0" needlePath="images\Btn_rect_Dwn.svg"/>
+    <dataLinks>
+     <dataLink class="TagMgrWgt" tagType="boolean" sourceType="Tag" tag="Application/Global_Variables/VALIDATION_N2OMID_HMIA" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R/W" attribute="value"/>
+     <dataLink class="TagMgrWgt" tagType="boolean" sourceType="Tag" tag="Application/Global_Variables/SPAN_MID_VAL_SELE" dataSource="_TagMgr" tagIndex="-1" widgetType="Project" readWrite="R/W" attribute="upColor">
+      <xForms>
+       <xForm class="ColorPaletteCustomXForm" ColorPaletteCustom="#ff0000;#00aa00" name="ColorPaletteCustom"/>
+      </xForms>
+     </dataLink>
+    </dataLinks>
+   </object>
+   <object class="LabelWgt" id="BtnStd1.lbl" hmiStyle="hmi-type:wgtlabel">
+    <wgtStyle font-size="24" wrapping="true" cx="196.92" cy="46.39" x="16.44" y="2.33" font-sizepx="32" font-bold="true" height="95.05" font-color="rgb(237,237,237)" mtx="1,0,0,0,1,0,0,0,1" min-font-size="8" width="393.84" alignment="center" vert-align="middle" wrap-type="wordWrap" forcePaint="1" font-family="Arial" keypad-type="None" max-font-size="64"/>
+    <links>
+     <lang class="MLTextLink" textid="9">
+      <MLFontFamily L1="Arial"/>
+     </lang>
+    </links>
+   </object>
+  </object>
+ </object>
+</wgtPage>

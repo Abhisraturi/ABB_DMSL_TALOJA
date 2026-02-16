@@ -1,0 +1,10 @@
+<ProjectConfig>
+ <version>04.05.02.544</version>
+ <fastboot>0</fastboot>
+ <targetName>Runtime PC</targetName>
+ <manufacturerCode></manufacturerCode>
+ <orientation>0</orientation>
+ <panelMemory>2GB</panelMemory>
+ <enableUserMgmt>true</enableUserMgmt>
+ <enableWatchdog>true</enableWatchdog>
+</ProjectConfig>

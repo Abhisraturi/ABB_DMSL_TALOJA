@@ -1,0 +1,75 @@
+<trends>
+ <multiLangs>
+  <langs defLangId="L1" curLangId="L1">
+   <lang langId="L1" name="Lang1" removable="false" writingsystem="Any" keypads=";;" langCode="en-US" defaultFont="Roboto"/>
+  </langs>
+  <MLTexts>
+   <MLText id="4" L1=""/>
+   <MLText id="0" L1="Timestamp"/>
+   <MLText id="1" L1="Date"/>
+   <MLText id="2" L1="Time"/>
+   <MLText id="3" L1="Quality"/>
+  </MLTexts>
+ </multiLangs>
+ <commonTitleMLDesc Date="[1@Trend]Date" Timestamp="[0@Trend]Timestamp" Time="[2@Trend]Time" Quality="[3@Trend]Quality"/>
+ <trend type="1">
+  <name>Trend1</name>
+  <source></source>
+  <samplingTime>10000</samplingTime>
+  <highRes>false</highRes>
+  <active>true</active>
+  <compressed>false</compressed>
+  <size>873000</size>
+  <trigger></trigger>
+  <deviation>
+   <lowLimit>0</lowLimit>
+   <highLimit>0</highLimit>
+  </deviation>
+  <dataStorageLoc></dataStorageLoc>
+  <storageDevice>0</storageDevice>
+  <sources>
+   <dl title="[4@Trend]" format="1" name="N20 VALUE" comment="" ddValue="3">A1_N2O</dl>
+   <dl title="[4@Trend]" format="1" name="N0 VALUE" comment="" ddValue="3">A1_NO</dl>
+   <dl title="[4@Trend]" format="1" name="O2 VALUE" comment="" ddValue="3">A1_O2</dl>
+  </sources>
+  <sourceTs>false</sourceTs>
+  <autodumptrend>false</autodumptrend>
+  <autoDumpFormat>0</autoDumpFormat>
+  <autoDumpStorageDevice>0</autoDumpStorageDevice>
+  <autodumpFileNameFormat>Data/%n/%y%M%d/%h%m%s</autodumpFileNameFormat>
+  <autoDumpCSVFields>0;5;4</autoDumpCSVFields>
+  <autoDumpCSVCurves>All curves</autoDumpCSVCurves>
+  <autoDumpTimeSpec>0</autoDumpTimeSpec>
+  <autoDumpDateFormat></autoDumpDateFormat>
+  <autoDumpLangCode></autoDumpLangCode>
+ </trend>
+ <trend type="1">
+  <name>Trend2</name>
+  <source></source>
+  <samplingTime>10000</samplingTime>
+  <highRes>false</highRes>
+  <active>true</active>
+  <compressed>false</compressed>
+  <size>873000</size>
+  <trigger></trigger>
+  <deviation>
+   <lowLimit>0</lowLimit>
+   <highLimit>0</highLimit>
+  </deviation>
+  <dataStorageLoc></dataStorageLoc>
+  <storageDevice>0</storageDevice>
+  <sources>
+   <dl title="[4@Trend]" format="1" name="NO VALUE" comment="" ddValue="3">A2_N2O</dl>
+  </sources>
+  <sourceTs>false</sourceTs>
+  <autodumptrend>false</autodumptrend>
+  <autoDumpFormat>0</autoDumpFormat>
+  <autoDumpStorageDevice>0</autoDumpStorageDevice>
+  <autodumpFileNameFormat>Data/%n/%y%M%d/%h%m%s</autodumpFileNameFormat>
+  <autoDumpCSVFields>0;5;4</autoDumpCSVFields>
+  <autoDumpCSVCurves>All curves</autoDumpCSVCurves>
+  <autoDumpTimeSpec>0</autoDumpTimeSpec>
+  <autoDumpDateFormat></autoDumpDateFormat>
+  <autoDumpLangCode></autoDumpLangCode>
+ </trend>
+</trends>
